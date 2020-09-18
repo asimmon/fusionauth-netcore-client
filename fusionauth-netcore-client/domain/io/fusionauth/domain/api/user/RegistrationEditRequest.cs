@@ -15,17 +15,22 @@
  */
 
 
+using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.form {
+namespace io.fusionauth.domain.api.user {
 
   /**
-   * @author Daniel DeGroff
+   * @author Brett Guy
    */
-  public enum FormType {
-        registration, 
-        adminRegistrationEdit, 
-        adminUserEdit
+  public class RegistrationEditRequest {
+
+    public UserRegistration userRegistration;
+
+    public RegistrationEditRequest with(Action<RegistrationEditRequest> action) {
+      action(this);
+      return this;
+    }
   }
 }
