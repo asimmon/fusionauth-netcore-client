@@ -37,6 +37,8 @@ namespace io.fusionauth.domain {
 
     public ApplicationEmailConfiguration emailConfiguration;
 
+    public ApplicationFormConfiguration formConfiguration;
+
     public Guid? id;
 
     public DateTimeOffset? insertInstant;
@@ -58,8 +60,6 @@ namespace io.fusionauth.domain {
     public RegistrationConfiguration registrationConfiguration;
 
     public ApplicationRegistrationDeletePolicy registrationDeletePolicy;
-
-    public Guid? formConfiguration.registrationFormId;
 
     public List<ApplicationRole> roles;
 

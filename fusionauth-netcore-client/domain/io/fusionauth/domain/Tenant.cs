@@ -42,6 +42,8 @@ namespace io.fusionauth.domain {
 
     public FamilyConfiguration familyConfiguration;
 
+    public TenantFormConfiguration formConfiguration;
+
     public int? httpSessionMaxInactiveInterval;
 
     public Guid? id;
@@ -69,8 +71,6 @@ namespace io.fusionauth.domain {
     public Guid? themeId;
 
     public TenantUserDeletePolicy userDeletePolicy;
-
-    public Guid? userEditFormId;
 
     public Tenant with(Action<Tenant> action) {
       action(this);
