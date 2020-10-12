@@ -59,7 +59,7 @@ namespace io.fusionauth.domain {
 
     public ApplicationRegistrationDeletePolicy registrationDeletePolicy;
 
-    public Guid? registrationEditFormId;
+    public Guid? formConfiguration.registrationFormId;
 
     public List<ApplicationRole> roles;
 
