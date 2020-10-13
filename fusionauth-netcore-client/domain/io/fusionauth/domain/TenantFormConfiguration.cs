@@ -25,7 +25,7 @@ namespace io.fusionauth.domain {
    */
   public class TenantFormConfiguration {
 
-    public Guid? userFormId;
+    public Guid? adminUserFormId;
 
     public TenantFormConfiguration with(Action<TenantFormConfiguration> action) {
       action(this);
