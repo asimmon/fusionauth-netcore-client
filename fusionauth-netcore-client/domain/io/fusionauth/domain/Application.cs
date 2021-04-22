@@ -71,6 +71,8 @@ namespace io.fusionauth.domain {
 
     public Guid? tenantId;
 
+    public Guid? themeId;
+
     public Guid? verificationEmailTemplateId;
 
     public bool? verifyRegistration;
