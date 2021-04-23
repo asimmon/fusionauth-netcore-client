@@ -22,8 +22,6 @@ namespace io.fusionauth.domain {
 
   public class UniqueUsernameConfiguration: Enableable {
 
-    public UniqueUsernameAppendPolicy appendPolicy;
-
     public int? numberOfDigits;
 
     public UniqueUsernameConfiguration with(Action<UniqueUsernameConfiguration> action) {
