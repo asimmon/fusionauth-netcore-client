@@ -24,6 +24,8 @@ namespace io.fusionauth.domain {
 
     public int? numberOfDigits;
 
+    public char separator;
+
     public UniqueUsernameConfiguration with(Action<UniqueUsernameConfiguration> action) {
       action(this);
       return this;
