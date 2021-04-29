@@ -31,6 +31,8 @@ namespace io.fusionauth.domain.reactor {
 
     public ReactorFeatureStatus advancedRegistrationForms;
 
+    public ReactorFeatureStatus applicationThemes;
+
     public ReactorFeatureStatus breachedPasswordDetection;
 
     public ReactorFeatureStatus connectors;
