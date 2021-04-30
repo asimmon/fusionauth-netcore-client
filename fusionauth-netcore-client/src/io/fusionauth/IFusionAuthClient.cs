@@ -3894,7 +3894,26 @@ namespace io.fusionauth {
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.
     /// </returns>
+    [Obsolete("This method has been renamed to VerifyEmailAddressAsync and changed to take a JSON request body, use that method instead.")]
     Task<ClientResponse<RESTVoid>> VerifyEmailAsync(string verificationId);
+
+    /// <summary>
+    /// Confirms a user's email address. 
+    /// 
+    /// The request body will contain the verificationId. You may also be required to send a one-time use code based upon your configuration. When 
+    /// the tenant is configured to gate a user until their email address is verified, this procedures requires two values instead of one. 
+    /// The verificationId is a high entropy value and the one-time use code is a low entropy value that is easily entered in a user interactive form. The 
+    /// two values together are able to confirm a user's email address and mark the user's email address as verified.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="request"> The request that contains the verificationId and optional one-time use code paired with the verificationId.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<RESTVoid>> VerifyEmailAddressAsync(VerifyEmailRequest request);
 
     /// <summary>
     /// Confirms an application registration. The Id given is usually from an email sent to the user.
@@ -7496,7 +7515,25 @@ namespace io.fusionauth {
    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
    /// IOException.
    /// </returns>
+   [Obsolete("This method has been renamed to VerifyEmailAddressAsync and changed to take a JSON request body, use that method instead.")]
    ClientResponse<RESTVoid> VerifyEmail(string verificationId);
+
+   /// <summary>
+   /// Confirms a user's email address. 
+   /// 
+   /// The request body will contain the verificationId. You may also be required to send a one-time use code based upon your configuration. When 
+   /// the tenant is configured to gate a user until their email address is verified, this procedures requires two values instead of one. 
+   /// The verificationId is a high entropy value and the one-time use code is a low entropy value that is easily entered in a user interactive form. The 
+   /// two values together are able to confirm a user's email address and mark the user's email address as verified.
+   /// </summary>
+   /// <param name="request"> The request that contains the verificationId and optional one-time use code paired with the verificationId.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<RESTVoid> VerifyEmailAddress(VerifyEmailRequest request);
 
    /// <summary>
    /// Confirms an application registration. The Id given is usually from an email sent to the user.

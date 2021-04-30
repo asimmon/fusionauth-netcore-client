@@ -23,13 +23,13 @@ namespace io.fusionauth.domain.api.user {
   /**
    * @author Daniel DeGroff
    */
-  public class VerifyEmailResponse {
+  public class VerifyEmailRequest {
 
     public string oneTimeCode;
 
     public string verificationId;
 
-    public VerifyEmailResponse with(Action<VerifyEmailResponse> action) {
+    public VerifyEmailRequest with(Action<VerifyEmailRequest> action) {
       action(this);
       return this;
     }

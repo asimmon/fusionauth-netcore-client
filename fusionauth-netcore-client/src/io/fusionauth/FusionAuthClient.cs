@@ -2729,10 +2729,20 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    [Obsolete("This method has been renamed to VerifyEmailAddressAsync and changed to take a JSON request body, use that method instead.")]
     public Task<ClientResponse<RESTVoid>> VerifyEmailAsync(string verificationId) {
       return buildAnonymousClient()
           .withUri("/api/user/verify-email")
           .withUriSegment(verificationId)
+          .withMethod("Post")
+          .goAsync<RESTVoid>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<RESTVoid>> VerifyEmailAddressAsync(VerifyEmailRequest request) {
+      return buildAnonymousClient()
+          .withUri("/api/user/verify-email")
+          .withJSONBody(request)
           .withMethod("Post")
           .goAsync<RESTVoid>();
     }

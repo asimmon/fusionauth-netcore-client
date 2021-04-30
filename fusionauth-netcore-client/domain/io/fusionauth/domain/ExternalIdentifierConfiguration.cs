@@ -39,6 +39,8 @@ namespace io.fusionauth.domain {
 
     public int? emailVerificationIdTimeToLiveInSeconds;
 
+    public SecureGeneratorConfiguration emailVerificationOneTimeCodeGenerator;
+
     public int? externalAuthenticationIdTimeToLiveInSeconds;
 
     public int? oneTimePasswordTimeToLiveInSeconds;
