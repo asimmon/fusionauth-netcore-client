@@ -23,15 +23,8 @@ namespace io.fusionauth.domain {
   /**
    * @author Daniel DeGroff
    */
-  public class TenantLoginConfiguration {
-
-    public bool? requireAuthentication;
-
-    public UnverifiedBehavior unverifiedEmailBehavior;
-
-    public TenantLoginConfiguration with(Action<TenantLoginConfiguration> action) {
-      action(this);
-      return this;
-    }
+  public enum UnverifiedBehavior {
+        Allow, 
+        Gated
   }
 }

@@ -28,6 +28,8 @@ namespace io.fusionauth.domain {
 
     public bool? requireAuthentication;
 
+    public UnverifiedBehavior unverifiedEmailBehavior;
+
     public LoginConfiguration with(Action<LoginConfiguration> action) {
       action(this);
       return this;

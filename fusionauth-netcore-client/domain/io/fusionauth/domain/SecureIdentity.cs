@@ -49,6 +49,8 @@ namespace io.fusionauth.domain {
 
     public string salt;
 
+    public string uniqueUsername;
+
     public string username;
 
     public ContentStatus usernameStatus;
