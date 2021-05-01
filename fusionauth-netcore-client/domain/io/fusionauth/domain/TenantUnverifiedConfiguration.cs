@@ -20,17 +20,16 @@ using System;
 
 namespace io.fusionauth.domain {
 
-  public class LoginConfiguration {
+  /**
+   * @author Daniel DeGroff
+   */
+  public class TenantUnverifiedConfiguration {
 
-    public bool? allowTokenRefresh;
+    public UnverifiedBehavior email;
 
-    public bool? generateRefreshTokens;
+    public UnverifiedGatedOptions whenGated;
 
-    public bool? requireAuthentication;
-
-    public ApplicationUnverifiedConfiguration unverified;
-
-    public LoginConfiguration with(Action<LoginConfiguration> action) {
+    public TenantUnverifiedConfiguration with(Action<TenantUnverifiedConfiguration> action) {
       action(this);
       return this;
     }
