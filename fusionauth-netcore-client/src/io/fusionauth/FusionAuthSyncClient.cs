@@ -1133,6 +1133,11 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public ClientResponse<VersionResponse> RetrieveVersion() {
+      return client.RetrieveVersionAsync().GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
     public ClientResponse<WebhookResponse> RetrieveWebhook(Guid? webhookId) {
       return client.RetrieveWebhookAsync(webhookId).GetAwaiter().GetResult();
     }

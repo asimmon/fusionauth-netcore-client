@@ -3017,6 +3017,18 @@ namespace io.fusionauth {
     Task<ClientResponse<UserResponse>> RetrieveUserUsingJWTAsync(string encodedJWT);
 
     /// <summary>
+    /// Retrieves the FusionAuth version string.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<VersionResponse>> RetrieveVersionAsync();
+
+    /// <summary>
     /// Retrieves the webhook for the given Id. If you pass in null for the id, this will return all the webhooks.
     /// This is an asynchronous method.
     /// </summary>
@@ -6698,6 +6710,17 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<UserResponse> RetrieveUserUsingJWT(string encodedJWT);
+
+   /// <summary>
+   /// Retrieves the FusionAuth version string.
+   /// </summary>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<VersionResponse> RetrieveVersion();
 
    /// <summary>
    /// Retrieves the webhook for the given Id. If you pass in null for the id, this will return all the webhooks.
