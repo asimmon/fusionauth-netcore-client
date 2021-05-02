@@ -32,6 +32,8 @@ namespace io.fusionauth.domain.api {
 
     public User user;
 
+    public string verificationId;
+
     public UserResponse with(Action<UserResponse> action) {
       action(this);
       return this;
