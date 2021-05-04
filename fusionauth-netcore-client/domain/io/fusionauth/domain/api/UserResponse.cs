@@ -28,11 +28,13 @@ namespace io.fusionauth.domain.api {
    */
   public class UserResponse {
 
+    public string emailVerificationId;
+
+    public IDictionary<Guid, string> registrationVerificationIds;
+
     public string token;
 
     public User user;
-
-    public string verificationId;
 
     public UserResponse with(Action<UserResponse> action) {
       action(this);
