@@ -27,7 +27,9 @@ namespace io.fusionauth.domain {
 
     public UnverifiedBehavior registration;
 
-    public UnverifiedGatedOptions whenGated;
+    public VerificationStrategy verificationStrategy;
+
+    public RegistrationUnverifiedOptions whenGated;
 
     public ApplicationUnverifiedConfiguration with(Action<ApplicationUnverifiedConfiguration> action) {
       action(this);

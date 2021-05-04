@@ -29,7 +29,7 @@ namespace io.fusionauth.domain.reactor {
 
     public ReactorFeatureStatus advancedMultiFactorAuthentication;
 
-    public ReactorFeatureStatus advancedRegistrationForms;
+    public ReactorFeatureStatus advancedRegistration;
 
     public ReactorFeatureStatus applicationThemes;
 

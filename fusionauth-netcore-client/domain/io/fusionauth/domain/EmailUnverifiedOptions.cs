@@ -23,13 +23,13 @@ namespace io.fusionauth.domain {
   /**
    * @author Daniel DeGroff
    */
-  public class UnverifiedGatedOptions: Enableable {
+  public class EmailUnverifiedOptions {
 
-    public bool? allowEmailChange;
+    public bool? allowEmailChangeWhenGated;
 
-    public VerificationStrategy verificationStrategy;
+    public UnverifiedBehavior behavior;
 
-    public UnverifiedGatedOptions with(Action<UnverifiedGatedOptions> action) {
+    public EmailUnverifiedOptions with(Action<EmailUnverifiedOptions> action) {
       action(this);
       return this;
     }

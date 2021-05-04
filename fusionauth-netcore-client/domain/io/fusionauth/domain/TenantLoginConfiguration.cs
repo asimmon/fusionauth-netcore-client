@@ -27,8 +27,6 @@ namespace io.fusionauth.domain {
 
     public bool? requireAuthentication;
 
-    public TenantUnverifiedConfiguration unverified;
-
     public TenantLoginConfiguration with(Action<TenantLoginConfiguration> action) {
       action(this);
       return this;
