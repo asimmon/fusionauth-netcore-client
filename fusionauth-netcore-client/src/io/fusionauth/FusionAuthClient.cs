@@ -977,14 +977,14 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<RESTVoid>> LoginPingAsync(Guid? userId, Guid? applicationId, string callerIPAddress) {
+    public Task<ClientResponse<LoginResponse>> LoginPingAsync(Guid? userId, Guid? applicationId, string callerIPAddress) {
       return buildClient()
           .withUri("/api/login")
           .withUriSegment(userId)
           .withUriSegment(applicationId)
           .withParameter("ipAddress", callerIPAddress)
           .withMethod("Put")
-          .goAsync<RESTVoid>();
+          .goAsync<LoginResponse>();
     }
 
     /// <inheritdoc/>

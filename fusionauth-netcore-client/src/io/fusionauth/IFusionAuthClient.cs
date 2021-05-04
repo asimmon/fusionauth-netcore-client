@@ -1333,7 +1333,7 @@ namespace io.fusionauth {
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.
     /// </returns>
-    Task<ClientResponse<RESTVoid>> LoginPingAsync(Guid? userId, Guid? applicationId, string callerIPAddress);
+    Task<ClientResponse<LoginResponse>> LoginPingAsync(Guid? userId, Guid? applicationId, string callerIPAddress);
 
     /// <summary>
     /// The Logout API is intended to be used to remove the refresh token and access token cookies if they exist on the
@@ -5172,7 +5172,7 @@ namespace io.fusionauth {
    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
    /// IOException.
    /// </returns>
-   ClientResponse<RESTVoid> LoginPing(Guid? userId, Guid? applicationId, string callerIPAddress);
+   ClientResponse<LoginResponse> LoginPing(Guid? userId, Guid? applicationId, string callerIPAddress);
 
    /// <summary>
    /// The Logout API is intended to be used to remove the refresh token and access token cookies if they exist on the

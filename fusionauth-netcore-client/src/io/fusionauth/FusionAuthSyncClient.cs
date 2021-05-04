@@ -503,7 +503,7 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<RESTVoid> LoginPing(Guid? userId, Guid? applicationId, string callerIPAddress) {
+    public ClientResponse<LoginResponse> LoginPing(Guid? userId, Guid? applicationId, string callerIPAddress) {
       return client.LoginPingAsync(userId, applicationId, callerIPAddress).GetAwaiter().GetResult();
     }
 

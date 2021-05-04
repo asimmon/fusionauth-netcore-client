@@ -26,6 +26,7 @@ namespace io.fusionauth.domain.oauth2 {
   public enum UserState {
         Authenticated, 
         AuthenticatedNotRegistered, 
-        AuthenticatedNotVerified
+        AuthenticatedNotVerified, 
+        AuthenticatedRegistrationNotVerified
   }
 }
