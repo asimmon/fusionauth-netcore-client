@@ -21,19 +21,25 @@ using System;
 namespace io.fusionauth.domain {
 
   /**
-   * A displayable raw login that includes application name and user loginId.
+   * Location information. Useful for IP addresses and other displayable data objects.
    *
    * @author Brian Pontarelli
    */
-  public class DisplayableRawLogin: RawLogin {
+  public class Location {
 
-    public string applicationName;
+    public string city;
 
-    public Location location;
+    public string country;
 
-    public string loginId;
+    public double? latitude;
 
-    public DisplayableRawLogin with(Action<DisplayableRawLogin> action) {
+    public double? longitude;
+
+    public string region;
+
+    public string zipcode;
+
+    public Location with(Action<Location> action) {
       action(this);
       return this;
     }
