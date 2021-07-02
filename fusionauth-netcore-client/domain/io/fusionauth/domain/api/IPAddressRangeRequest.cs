@@ -26,7 +26,7 @@ namespace io.fusionauth.domain.api {
    */
   public class IPAddressRangeRequest {
 
-    public IpAddressRange ipAddressRange;
+    public IPAddressRange ipAddressRange;
 
     public IPAddressRangeRequest with(Action<IPAddressRangeRequest> action) {
       action(this);
