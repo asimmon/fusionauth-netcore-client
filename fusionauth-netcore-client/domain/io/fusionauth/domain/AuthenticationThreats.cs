@@ -18,34 +18,15 @@
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.reactor {
+namespace io.fusionauth.domain {
 
   /**
-   * @author Daniel DeGroff
+   * @author Brett Pontarelli
    */
-  public class ReactorStatus {
-
-    public ReactorFeatureStatus advancedIdentityProviders;
-
-    public ReactorFeatureStatus advancedMultiFactorAuthentication;
-
-    public ReactorFeatureStatus advancedRegistration;
-
-    public ReactorFeatureStatus applicationThemes;
-
-    public ReactorFeatureStatus breachedPasswordDetection;
-
-    public ReactorFeatureStatus connectors;
-
-    public ReactorFeatureStatus entityManagement;
-
-    public bool? licensed;
-
-    public ReactorFeatureStatus threatDetection;
-
-    public ReactorStatus with(Action<ReactorStatus> action) {
-      action(this);
-      return this;
-    }
+  public enum AuthenticationThreats {
+        ImpossibleTravel, 
+        UnusualTravel, 
+        BadCaptcha, 
+        NewDeviceLogin
   }
 }
