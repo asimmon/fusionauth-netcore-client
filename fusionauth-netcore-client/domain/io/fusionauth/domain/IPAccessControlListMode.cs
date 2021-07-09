@@ -21,27 +21,10 @@ using System;
 namespace io.fusionauth.domain {
 
   /**
-   * TODO : ip-allow-block : Fix names so they are all the same. I prefer `IP`.
-   *
    * @author Brett Guy
    */
-  public class IpAddressRange {
-
-    public string endIpAddress;
-
-    public Guid? id;
-
-    public DateTimeOffset? insertInstant;
-
-    public DateTimeOffset? lastUpdateInstant;
-
-    public AddressRangeMode mode;
-
-    public string startIpAddress;
-
-    public IpAddressRange with(Action<IpAddressRange> action) {
-      action(this);
-      return this;
-    }
+  public enum IPAccessControlListMode {
+        Allow, 
+        Block
   }
 }

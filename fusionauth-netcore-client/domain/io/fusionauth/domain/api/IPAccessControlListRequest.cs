@@ -24,13 +24,11 @@ namespace io.fusionauth.domain.api {
   /**
    * @author Brett Guy
    */
-  public class IPAddressRangeResponse {
+  public class IPAccessControlListRequest {
 
-    public IPAddressRange ipAddressRange;
+    public IPAccessControlList ipAccessControlList;
 
-    public List<IPAddressRange> ipAddressRanges;
-
-    public IPAddressRangeResponse with(Action<IPAddressRangeResponse> action) {
+    public IPAccessControlListRequest with(Action<IPAccessControlListRequest> action) {
       action(this);
       return this;
     }

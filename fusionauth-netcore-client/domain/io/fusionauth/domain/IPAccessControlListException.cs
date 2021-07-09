@@ -23,8 +23,15 @@ namespace io.fusionauth.domain {
   /**
    * @author Brett Guy
    */
-  public enum AddressRangeMode {
-        ALLOW, 
-        BLOCK
+  public class IPAccessControlListException {
+
+    public string endIPAddress;
+
+    public string startIPAddress;
+
+    public IPAccessControlListException with(Action<IPAccessControlListException> action) {
+      action(this);
+      return this;
+    }
   }
 }
