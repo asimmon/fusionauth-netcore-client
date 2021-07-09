@@ -15,22 +15,41 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.api {
+namespace io.fusionauth.domain {
 
   /**
-   * API request for User consent types.
+   * Models a consent.
    *
    * @author Daniel DeGroff
    */
-  public class ConsentRequest {
+  public class Consent {
 
-    public Consent consent;
+    public Guid? consentEmailTemplateId;
 
-    public ConsentRequest with(Action<ConsentRequest> action) {
+    public LocalizedIntegers countryMinimumAgeForSelfConsent;
+
+    public IDictionary<string, object> data;
+
+    public int? defaultMinimumAgeForSelfConsent;
+
+    public EmailPlus emailPlus;
+
+    public Guid? id;
+
+    public DateTimeOffset? insertInstant;
+
+    public DateTimeOffset? lastUpdateInstant;
+
+    public bool? multipleValuesAllowed;
+
+    public string name;
+
+    public List<string> values;
+
+    public Consent with(Action<Consent> action) {
       action(this);
       return this;
     }

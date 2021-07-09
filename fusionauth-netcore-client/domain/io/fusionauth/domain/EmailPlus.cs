@@ -15,22 +15,20 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.api {
+namespace io.fusionauth.domain {
 
-  /**
-   * API request for User consent types.
-   *
-   * @author Daniel DeGroff
-   */
-  public class ConsentRequest {
+  public class EmailPlus: Enableable {
 
-    public Consent consent;
+    public Guid? emailTemplateId;
 
-    public ConsentRequest with(Action<ConsentRequest> action) {
+    public int? maximumTimeToSendEmailInHours;
+
+    public int? minimumTimeToSendEmailInHours;
+
+    public EmailPlus with(Action<EmailPlus> action) {
       action(this);
       return this;
     }
