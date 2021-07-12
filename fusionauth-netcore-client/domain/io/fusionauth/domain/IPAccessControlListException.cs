@@ -20,9 +20,7 @@ using System;
 
 namespace io.fusionauth.domain {
 
-  /**
-   * @author Brett Guy
-   */
+  // I think we could omit "Exception" from the name. Really this is just an IP range I think.
   public class IPAccessControlListException {
 
     public string endIPAddress;
