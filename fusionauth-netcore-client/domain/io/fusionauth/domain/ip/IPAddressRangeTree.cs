@@ -22,7 +22,7 @@ namespace io.fusionauth.domain.ip {
 
   /**
    * An implementation of an Interval Tree used to store IP address ranges.
-   *
+   * <p>
    * https://en.wikipedia.org/wiki/Interval_tree
    */
   public class IPAddressRangeTree {

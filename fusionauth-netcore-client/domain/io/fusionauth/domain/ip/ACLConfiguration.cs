@@ -15,6 +15,7 @@
  */
 
 
+using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
@@ -23,9 +24,11 @@ namespace io.fusionauth.domain.ip {
   /**
    * @author Brett Guy
    */
-  public class IPAddressRangeRule {
+  public class ACLConfiguration {
 
-    public IPAddressRangeRule with(Action<IPAddressRangeRule> action) {
+    public IPAccessControlListMode aclAction;
+
+    public ACLConfiguration with(Action<ACLConfiguration> action) {
       action(this);
       return this;
     }

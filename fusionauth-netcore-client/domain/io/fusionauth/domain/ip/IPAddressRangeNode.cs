@@ -25,13 +25,13 @@ namespace io.fusionauth.domain.ip {
    */
   public class IPAddressRangeNode {
 
-    public long? endIpAddress;
+    public long? endIPAddress;
 
     public IPAddressRangeNode left;
 
     public IPAddressRangeNode right;
 
-    public long? startIpAddress;
+    public long? startIPAddress;
 
     public IPAddressRangeNode with(Action<IPAddressRangeNode> action) {
       action(this);
