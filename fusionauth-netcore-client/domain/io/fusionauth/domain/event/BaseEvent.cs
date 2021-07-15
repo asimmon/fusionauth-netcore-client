@@ -15,6 +15,7 @@
  */
 
 
+using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
@@ -28,6 +29,8 @@ namespace io.fusionauth.domain.@event {
   public class BaseEvent {
 
     public DateTimeOffset? createInstant;
+
+    public EventInfo @eventInfo;
 
     public Guid? id;
 

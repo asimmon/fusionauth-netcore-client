@@ -15,6 +15,7 @@
  */
 
 
+using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
@@ -30,6 +31,8 @@ namespace io.fusionauth.domain.api {
     public string code;
 
     public string email;
+
+    public EventInfo @eventInfo;
 
     public string method;
 

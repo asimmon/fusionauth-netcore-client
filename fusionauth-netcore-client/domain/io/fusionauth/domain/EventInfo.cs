@@ -15,31 +15,35 @@
  */
 
 
-using io.fusionauth.domain;
-using io.fusionauth.domain.jwt;
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.api {
+namespace io.fusionauth.domain {
 
   /**
-   * @author Daniel DeGroff
+   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
+   *
+   * @author Brian Pontarelli
    */
-  public class BaseLoginRequest {
+  public class EventInfo {
 
-    public Guid? applicationId;
+    public string deviceDescription;
 
-    public string deviceTrustId;
+    public string deviceName;
 
-    public EventInfo @eventInfo;
+    public string deviceType;
+
+    public DateTimeOffset? instant;
 
     public string ipAddress;
 
-    public MetaData metaData;
+    public Location location;
 
-    public bool? noJWT;
+    public string os;
 
-    public BaseLoginRequest with(Action<BaseLoginRequest> action) {
+    public string userAgent;
+
+    public EventInfo with(Action<EventInfo> action) {
       action(this);
       return this;
     }
