@@ -148,16 +148,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<IPAccessControlListResponse>> CreateACLAsync(Guid? accessControlListId, IPAccessControlListRequest request) {
-      return buildClient()
-          .withUri("/api/ip-acl")
-          .withUriSegment(accessControlListId)
-          .withJSONBody(request)
-          .withMethod("Post")
-          .goAsync<IPAccessControlListResponse>();
-    }
-
-    /// <inheritdoc/>
     public Task<ClientResponse<APIKeyResponse>> CreateAPIKeyAsync(Guid? keyId, APIKeyRequest request) {
       return buildClient()
           .withUri("/api/api-key")
@@ -307,6 +297,16 @@ namespace io.fusionauth {
           .withJSONBody(request)
           .withMethod("Post")
           .goAsync<MemberResponse>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<IPAccessControlListResponse>> CreateIPAccessControlListAsync(Guid? accessControlListId, IPAccessControlListRequest request) {
+      return buildClient()
+          .withUri("/api/ip-acl")
+          .withUriSegment(accessControlListId)
+          .withJSONBody(request)
+          .withMethod("Post")
+          .goAsync<IPAccessControlListResponse>();
     }
 
     /// <inheritdoc/>
@@ -487,15 +487,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<RESTVoid>> DeleteACLAsync(Guid? ipAccessControlListId) {
-      return buildClient()
-          .withUri("/api/ip-acl")
-          .withUriSegment(ipAccessControlListId)
-          .withMethod("Delete")
-          .goAsync<RESTVoid>();
-    }
-
-    /// <inheritdoc/>
     public Task<ClientResponse<RESTVoid>> DeleteAPIKeyAsync(Guid? keyId) {
       return buildClient()
           .withUri("/api/api-key")
@@ -625,6 +616,15 @@ namespace io.fusionauth {
       return buildClient()
           .withUri("/api/group/member")
           .withJSONBody(request)
+          .withMethod("Delete")
+          .goAsync<RESTVoid>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<RESTVoid>> DeleteIPAccessControlListAsync(Guid? ipAccessControlListId) {
+      return buildClient()
+          .withUri("/api/ip-acl")
+          .withUriSegment(ipAccessControlListId)
           .withMethod("Delete")
           .goAsync<RESTVoid>();
     }
@@ -1395,23 +1395,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<IPAccessControlListResponse>> RetrieveACLAsync(Guid? formId) {
-      return buildClient()
-          .withUri("/api/ip-acl")
-          .withUriSegment(formId)
-          .withMethod("Get")
-          .goAsync<IPAccessControlListResponse>();
-    }
-
-    /// <inheritdoc/>
-    public Task<ClientResponse<IPAccessControlListResponse>> RetrieveACLsAsync() {
-      return buildClient()
-          .withUri("/api/ip-acl")
-          .withMethod("Get")
-          .goAsync<IPAccessControlListResponse>();
-    }
-
-    /// <inheritdoc/>
     public Task<ClientResponse<APIKeyResponse>> RetrieveAPIKeyAsync(Guid? keyId) {
       return buildClient()
           .withUri("/api/api-key")
@@ -1669,6 +1652,15 @@ namespace io.fusionauth {
           .withUri("/api/group")
           .withMethod("Get")
           .goAsync<GroupResponse>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<IPAccessControlListResponse>> RetrieveIPAccessControlListAsync(Guid? ipAccessControlListId) {
+      return buildClient()
+          .withUri("/api/ip-acl")
+          .withUriSegment(ipAccessControlListId)
+          .withMethod("Get")
+          .goAsync<IPAccessControlListResponse>();
     }
 
     /// <inheritdoc/>
@@ -2324,15 +2316,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<IPAccessControlListSearchResponse>> SearchACLsAsync(IPAccessControlListSearchRequest request) {
-      return buildClient()
-          .withUri("/api/ip-acl/search")
-          .withJSONBody(request)
-          .withMethod("Post")
-          .goAsync<IPAccessControlListSearchResponse>();
-    }
-
-    /// <inheritdoc/>
     public Task<ClientResponse<AuditLogSearchResponse>> SearchAuditLogsAsync(AuditLogSearchRequest request) {
       return buildClient()
           .withUri("/api/system/audit-log/search")
@@ -2384,6 +2367,15 @@ namespace io.fusionauth {
           .withJSONBody(request)
           .withMethod("Post")
           .goAsync<EventLogSearchResponse>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<IPAccessControlListSearchResponse>> SearchIPAccessControlListsAsync(IPAccessControlListSearchRequest request) {
+      return buildClient()
+          .withUri("/api/ip-acl/search")
+          .withJSONBody(request)
+          .withMethod("Post")
+          .goAsync<IPAccessControlListSearchResponse>();
     }
 
     /// <inheritdoc/>
@@ -2537,16 +2529,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<IPAccessControlListResponse>> UpdateACLAsync(Guid? accessControlListId, IPAccessControlListRequest request) {
-      return buildClient()
-          .withUri("/api/ip-acl")
-          .withUriSegment(accessControlListId)
-          .withJSONBody(request)
-          .withMethod("Put")
-          .goAsync<IPAccessControlListResponse>();
-    }
-
-    /// <inheritdoc/>
     public Task<ClientResponse<APIKeyResponse>> UpdateAPIKeyAsync(Guid? apiKeyId, APIKeyRequest request) {
       return buildClient()
           .withUri("/api/api-key")
@@ -2668,6 +2650,16 @@ namespace io.fusionauth {
           .withJSONBody(request)
           .withMethod("Put")
           .goAsync<GroupResponse>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<IPAccessControlListResponse>> UpdateIPAccessControlListAsync(Guid? accessControlListId, IPAccessControlListRequest request) {
+      return buildClient()
+          .withUri("/api/ip-acl")
+          .withUriSegment(accessControlListId)
+          .withJSONBody(request)
+          .withMethod("Put")
+          .goAsync<IPAccessControlListResponse>();
     }
 
     /// <inheritdoc/>

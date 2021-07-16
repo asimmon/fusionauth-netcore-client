@@ -133,20 +133,6 @@ namespace io.fusionauth {
     Task<ClientResponse<RESTVoid>> CommentOnUserAsync(UserCommentRequest request);
 
     /// <summary>
-    /// Creates an ACL. You can optionally specify an Id for the ACL. If not provided one will be generated.
-    /// This is an asynchronous method.
-    /// </summary>
-    /// <param name="accessControlListId"> (Optional) The Id for the ACL. If not provided a secure random UUID will be generated.</param>
-    /// <param name="request"> The request object that contains all of the information used to create the IP ACL.</param>
-    /// <returns>
-    /// When successful, the response will contain the log of the action. If there was a validation error or any
-    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-    /// IOException.
-    /// </returns>
-    Task<ClientResponse<IPAccessControlListResponse>> CreateACLAsync(Guid? accessControlListId, IPAccessControlListRequest request);
-
-    /// <summary>
     /// Creates an API key. You can optionally specify a unique Id for the key, if not provided one will be generated.
     /// an API key can only be created with equal or lesser authority. An API key cannot create another API key unless it is granted 
     /// to that API key.
@@ -364,6 +350,20 @@ namespace io.fusionauth {
     /// IOException.
     /// </returns>
     Task<ClientResponse<MemberResponse>> CreateGroupMembersAsync(MemberRequest request);
+
+    /// <summary>
+    /// Creates an IP Access Control List. You can optionally specify an Id on this create request, if one is not provided one will be generated.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="accessControlListId"> (Optional) The Id for the IP Access Control List. If not provided a secure random UUID will be generated.</param>
+    /// <param name="request"> The request object that contains all of the information used to create the IP Access Control List.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<IPAccessControlListResponse>> CreateIPAccessControlListAsync(Guid? accessControlListId, IPAccessControlListRequest request);
 
     /// <summary>
     /// Creates an identity provider. You can optionally specify an Id for the identity provider, if not provided one will be generated.
@@ -613,19 +613,6 @@ namespace io.fusionauth {
     Task<ClientResponse<UserDeleteResponse>> DeactivateUsersByIdsAsync(List<string> userIds);
 
     /// <summary>
-    /// Deletes the ACL for the given Id.
-    /// This is an asynchronous method.
-    /// </summary>
-    /// <param name="ipAccessControlListId"> The Id of the ACL to delete.</param>
-    /// <returns>
-    /// When successful, the response will contain the log of the action. If there was a validation error or any
-    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-    /// IOException.
-    /// </returns>
-    Task<ClientResponse<RESTVoid>> DeleteACLAsync(Guid? ipAccessControlListId);
-
-    /// <summary>
     /// Deletes the API key for the given Id.
     /// This is an asynchronous method.
     /// </summary>
@@ -815,6 +802,19 @@ namespace io.fusionauth {
     /// IOException.
     /// </returns>
     Task<ClientResponse<RESTVoid>> DeleteGroupMembersAsync(MemberDeleteRequest request);
+
+    /// <summary>
+    /// Deletes the IP Access Control List for the given Id.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="ipAccessControlListId"> The Id of the IP Access Control List to delete.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<RESTVoid>> DeleteIPAccessControlListAsync(Guid? ipAccessControlListId);
 
     /// <summary>
     /// Deletes the identity provider for the given Id.
@@ -1928,31 +1928,6 @@ namespace io.fusionauth {
     Task<ClientResponse<VerifyRegistrationResponse>> ResendRegistrationVerificationAsync(string email, Guid? applicationId);
 
     /// <summary>
-    /// Retrieves the ACL with the given Id.
-    /// This is an asynchronous method.
-    /// </summary>
-    /// <param name="formId"> The Id of the ACL.</param>
-    /// <returns>
-    /// When successful, the response will contain the log of the action. If there was a validation error or any
-    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-    /// IOException.
-    /// </returns>
-    Task<ClientResponse<IPAccessControlListResponse>> RetrieveACLAsync(Guid? formId);
-
-    /// <summary>
-    /// Retrieves all ACLs.
-    /// This is an asynchronous method.
-    /// </summary>
-    /// <returns>
-    /// When successful, the response will contain the log of the action. If there was a validation error or any
-    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-    /// IOException.
-    /// </returns>
-    Task<ClientResponse<IPAccessControlListResponse>> RetrieveACLsAsync();
-
-    /// <summary>
     /// Retrieves an authentication API key for the given id
     /// This is an asynchronous method.
     /// </summary>
@@ -2329,6 +2304,19 @@ namespace io.fusionauth {
     /// IOException.
     /// </returns>
     Task<ClientResponse<GroupResponse>> RetrieveGroupsAsync();
+
+    /// <summary>
+    /// Retrieves the IP Access Control List with the given Id.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="ipAccessControlListId"> The Id of the IP Access Control List.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<IPAccessControlListResponse>> RetrieveIPAccessControlListAsync(Guid? ipAccessControlListId);
 
     /// <summary>
     /// Retrieves the identity provider for the given id or all of the identity providers if the id is null.
@@ -3309,19 +3297,6 @@ namespace io.fusionauth {
     Task<ClientResponse<RESTVoid>> RevokeUserConsentAsync(Guid? userConsentId);
 
     /// <summary>
-    /// Searches the ACLs with the specified criteria and pagination.
-    /// This is an asynchronous method.
-    /// </summary>
-    /// <param name="request"> The search criteria and pagination information.</param>
-    /// <returns>
-    /// When successful, the response will contain the log of the action. If there was a validation error or any
-    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-    /// IOException.
-    /// </returns>
-    Task<ClientResponse<IPAccessControlListSearchResponse>> SearchACLsAsync(IPAccessControlListSearchRequest request);
-
-    /// <summary>
     /// Searches the audit logs with the specified criteria and pagination.
     /// This is an asynchronous method.
     /// </summary>
@@ -3398,6 +3373,19 @@ namespace io.fusionauth {
     /// IOException.
     /// </returns>
     Task<ClientResponse<EventLogSearchResponse>> SearchEventLogsAsync(EventLogSearchRequest request);
+
+    /// <summary>
+    /// Searches the IP Access Control Lists with the specified criteria and pagination.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="request"> The search criteria and pagination information.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<IPAccessControlListSearchResponse>> SearchIPAccessControlListsAsync(IPAccessControlListSearchRequest request);
 
     /// <summary>
     /// Searches the login records with the specified criteria and pagination.
@@ -3624,20 +3612,6 @@ namespace io.fusionauth {
     Task<ClientResponse<LoginResponse>> TwoFactorLoginAsync(TwoFactorLoginRequest request);
 
     /// <summary>
-    /// Updates the ACL with the given Id.
-    /// This is an asynchronous method.
-    /// </summary>
-    /// <param name="accessControlListId"> The Id of the ACL to update.</param>
-    /// <param name="request"> The request that contains all of the new ACL information.</param>
-    /// <returns>
-    /// When successful, the response will contain the log of the action. If there was a validation error or any
-    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-    /// IOException.
-    /// </returns>
-    Task<ClientResponse<IPAccessControlListResponse>> UpdateACLAsync(Guid? accessControlListId, IPAccessControlListRequest request);
-
-    /// <summary>
     /// Updates an API key by given id
     /// This is an asynchronous method.
     /// </summary>
@@ -3806,6 +3780,20 @@ namespace io.fusionauth {
     /// IOException.
     /// </returns>
     Task<ClientResponse<GroupResponse>> UpdateGroupAsync(Guid? groupId, GroupRequest request);
+
+    /// <summary>
+    /// Updates the IP Access Control List with the given Id.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="accessControlListId"> The Id of the IP Access Control List to update.</param>
+    /// <param name="request"> The request that contains all of the new IP Access Control List information.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<IPAccessControlListResponse>> UpdateIPAccessControlListAsync(Guid? accessControlListId, IPAccessControlListRequest request);
 
     /// <summary>
     /// Updates the identity provider with the given Id.
@@ -4220,19 +4208,6 @@ namespace io.fusionauth {
    ClientResponse<RESTVoid> CommentOnUser(UserCommentRequest request);
 
    /// <summary>
-   /// Creates an ACL. You can optionally specify an Id for the ACL. If not provided one will be generated.
-   /// </summary>
-   /// <param name="accessControlListId"> (Optional) The Id for the ACL. If not provided a secure random UUID will be generated.</param>
-   /// <param name="request"> The request object that contains all of the information used to create the IP ACL.</param>
-   /// <returns>
-   /// When successful, the response will contain the log of the action. If there was a validation error or any
-   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-   /// IOException.
-   /// </returns>
-   ClientResponse<IPAccessControlListResponse> CreateACL(Guid? accessControlListId, IPAccessControlListRequest request);
-
-   /// <summary>
    /// Creates an API key. You can optionally specify a unique Id for the key, if not provided one will be generated.
    /// an API key can only be created with equal or lesser authority. An API key cannot create another API key unless it is granted 
    /// to that API key.
@@ -4435,6 +4410,19 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<MemberResponse> CreateGroupMembers(MemberRequest request);
+
+   /// <summary>
+   /// Creates an IP Access Control List. You can optionally specify an Id on this create request, if one is not provided one will be generated.
+   /// </summary>
+   /// <param name="accessControlListId"> (Optional) The Id for the IP Access Control List. If not provided a secure random UUID will be generated.</param>
+   /// <param name="request"> The request object that contains all of the information used to create the IP Access Control List.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<IPAccessControlListResponse> CreateIPAccessControlList(Guid? accessControlListId, IPAccessControlListRequest request);
 
    /// <summary>
    /// Creates an identity provider. You can optionally specify an Id for the identity provider, if not provided one will be generated.
@@ -4666,18 +4654,6 @@ namespace io.fusionauth {
    ClientResponse<UserDeleteResponse> DeactivateUsersByIds(List<string> userIds);
 
    /// <summary>
-   /// Deletes the ACL for the given Id.
-   /// </summary>
-   /// <param name="ipAccessControlListId"> The Id of the ACL to delete.</param>
-   /// <returns>
-   /// When successful, the response will contain the log of the action. If there was a validation error or any
-   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-   /// IOException.
-   /// </returns>
-   ClientResponse<RESTVoid> DeleteACL(Guid? ipAccessControlListId);
-
-   /// <summary>
    /// Deletes the API key for the given Id.
    /// </summary>
    /// <param name="keyId"> The Id of the authentication API key to delete.</param>
@@ -4853,6 +4829,18 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<RESTVoid> DeleteGroupMembers(MemberDeleteRequest request);
+
+   /// <summary>
+   /// Deletes the IP Access Control List for the given Id.
+   /// </summary>
+   /// <param name="ipAccessControlListId"> The Id of the IP Access Control List to delete.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<RESTVoid> DeleteIPAccessControlList(Guid? ipAccessControlListId);
 
    /// <summary>
    /// Deletes the identity provider for the given Id.
@@ -5890,29 +5878,6 @@ namespace io.fusionauth {
    ClientResponse<VerifyRegistrationResponse> ResendRegistrationVerification(string email, Guid? applicationId);
 
    /// <summary>
-   /// Retrieves the ACL with the given Id.
-   /// </summary>
-   /// <param name="formId"> The Id of the ACL.</param>
-   /// <returns>
-   /// When successful, the response will contain the log of the action. If there was a validation error or any
-   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-   /// IOException.
-   /// </returns>
-   ClientResponse<IPAccessControlListResponse> RetrieveACL(Guid? formId);
-
-   /// <summary>
-   /// Retrieves all ACLs.
-   /// </summary>
-   /// <returns>
-   /// When successful, the response will contain the log of the action. If there was a validation error or any
-   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-   /// IOException.
-   /// </returns>
-   ClientResponse<IPAccessControlListResponse> RetrieveACLs();
-
-   /// <summary>
    /// Retrieves an authentication API key for the given id
    /// </summary>
    /// <param name="keyId"> The Id of the API key to retrieve.</param>
@@ -6260,6 +6225,18 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<GroupResponse> RetrieveGroups();
+
+   /// <summary>
+   /// Retrieves the IP Access Control List with the given Id.
+   /// </summary>
+   /// <param name="ipAccessControlListId"> The Id of the IP Access Control List.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<IPAccessControlListResponse> RetrieveIPAccessControlList(Guid? ipAccessControlListId);
 
    /// <summary>
    /// Retrieves the identity provider for the given id or all of the identity providers if the id is null.
@@ -7168,18 +7145,6 @@ namespace io.fusionauth {
    ClientResponse<RESTVoid> RevokeUserConsent(Guid? userConsentId);
 
    /// <summary>
-   /// Searches the ACLs with the specified criteria and pagination.
-   /// </summary>
-   /// <param name="request"> The search criteria and pagination information.</param>
-   /// <returns>
-   /// When successful, the response will contain the log of the action. If there was a validation error or any
-   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-   /// IOException.
-   /// </returns>
-   ClientResponse<IPAccessControlListSearchResponse> SearchACLs(IPAccessControlListSearchRequest request);
-
-   /// <summary>
    /// Searches the audit logs with the specified criteria and pagination.
    /// </summary>
    /// <param name="request"> The search criteria and pagination information.</param>
@@ -7250,6 +7215,18 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<EventLogSearchResponse> SearchEventLogs(EventLogSearchRequest request);
+
+   /// <summary>
+   /// Searches the IP Access Control Lists with the specified criteria and pagination.
+   /// </summary>
+   /// <param name="request"> The search criteria and pagination information.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<IPAccessControlListSearchResponse> SearchIPAccessControlLists(IPAccessControlListSearchRequest request);
 
    /// <summary>
    /// Searches the login records with the specified criteria and pagination.
@@ -7460,19 +7437,6 @@ namespace io.fusionauth {
    ClientResponse<LoginResponse> TwoFactorLogin(TwoFactorLoginRequest request);
 
    /// <summary>
-   /// Updates the ACL with the given Id.
-   /// </summary>
-   /// <param name="accessControlListId"> The Id of the ACL to update.</param>
-   /// <param name="request"> The request that contains all of the new ACL information.</param>
-   /// <returns>
-   /// When successful, the response will contain the log of the action. If there was a validation error or any
-   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
-   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
-   /// IOException.
-   /// </returns>
-   ClientResponse<IPAccessControlListResponse> UpdateACL(Guid? accessControlListId, IPAccessControlListRequest request);
-
-   /// <summary>
    /// Updates an API key by given id
    /// </summary>
    /// <param name="apiKeyId"> The Id of the API key to update.</param>
@@ -7629,6 +7593,19 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<GroupResponse> UpdateGroup(Guid? groupId, GroupRequest request);
+
+   /// <summary>
+   /// Updates the IP Access Control List with the given Id.
+   /// </summary>
+   /// <param name="accessControlListId"> The Id of the IP Access Control List to update.</param>
+   /// <param name="request"> The request that contains all of the new IP Access Control List information.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<IPAccessControlListResponse> UpdateIPAccessControlList(Guid? accessControlListId, IPAccessControlListRequest request);
 
    /// <summary>
    /// Updates the identity provider with the given Id.

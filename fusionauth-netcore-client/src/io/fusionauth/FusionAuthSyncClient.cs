@@ -91,11 +91,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<IPAccessControlListResponse> CreateACL(Guid? accessControlListId, IPAccessControlListRequest request) {
-      return client.CreateACLAsync(accessControlListId, request).GetAwaiter().GetResult();
-    }
-
-    /// <inheritdoc/>
     public ClientResponse<APIKeyResponse> CreateAPIKey(Guid? keyId, APIKeyRequest request) {
       return client.CreateAPIKeyAsync(keyId, request).GetAwaiter().GetResult();
     }
@@ -168,6 +163,11 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<MemberResponse> CreateGroupMembers(MemberRequest request) {
       return client.CreateGroupMembersAsync(request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
+    public ClientResponse<IPAccessControlListResponse> CreateIPAccessControlList(Guid? accessControlListId, IPAccessControlListRequest request) {
+      return client.CreateIPAccessControlListAsync(accessControlListId, request).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -262,11 +262,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<RESTVoid> DeleteACL(Guid? ipAccessControlListId) {
-      return client.DeleteACLAsync(ipAccessControlListId).GetAwaiter().GetResult();
-    }
-
-    /// <inheritdoc/>
     public ClientResponse<RESTVoid> DeleteAPIKey(Guid? keyId) {
       return client.DeleteAPIKeyAsync(keyId).GetAwaiter().GetResult();
     }
@@ -334,6 +329,11 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<RESTVoid> DeleteGroupMembers(MemberDeleteRequest request) {
       return client.DeleteGroupMembersAsync(request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
+    public ClientResponse<RESTVoid> DeleteIPAccessControlList(Guid? ipAccessControlListId) {
+      return client.DeleteIPAccessControlListAsync(ipAccessControlListId).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -718,16 +718,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<IPAccessControlListResponse> RetrieveACL(Guid? formId) {
-      return client.RetrieveACLAsync(formId).GetAwaiter().GetResult();
-    }
-
-    /// <inheritdoc/>
-    public ClientResponse<IPAccessControlListResponse> RetrieveACLs() {
-      return client.RetrieveACLsAsync().GetAwaiter().GetResult();
-    }
-
-    /// <inheritdoc/>
     public ClientResponse<APIKeyResponse> RetrieveAPIKey(Guid? keyId) {
       return client.RetrieveAPIKeyAsync(keyId).GetAwaiter().GetResult();
     }
@@ -870,6 +860,11 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<GroupResponse> RetrieveGroups() {
       return client.RetrieveGroupsAsync().GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
+    public ClientResponse<IPAccessControlListResponse> RetrieveIPAccessControlList(Guid? ipAccessControlListId) {
+      return client.RetrieveIPAccessControlListAsync(ipAccessControlListId).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -1233,11 +1228,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<IPAccessControlListSearchResponse> SearchACLs(IPAccessControlListSearchRequest request) {
-      return client.SearchACLsAsync(request).GetAwaiter().GetResult();
-    }
-
-    /// <inheritdoc/>
     public ClientResponse<AuditLogSearchResponse> SearchAuditLogs(AuditLogSearchRequest request) {
       return client.SearchAuditLogsAsync(request).GetAwaiter().GetResult();
     }
@@ -1265,6 +1255,11 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<EventLogSearchResponse> SearchEventLogs(EventLogSearchRequest request) {
       return client.SearchEventLogsAsync(request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
+    public ClientResponse<IPAccessControlListSearchResponse> SearchIPAccessControlLists(IPAccessControlListSearchRequest request) {
+      return client.SearchIPAccessControlListsAsync(request).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -1352,11 +1347,6 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<IPAccessControlListResponse> UpdateACL(Guid? accessControlListId, IPAccessControlListRequest request) {
-      return client.UpdateACLAsync(accessControlListId, request).GetAwaiter().GetResult();
-    }
-
-    /// <inheritdoc/>
     public ClientResponse<APIKeyResponse> UpdateAPIKey(Guid? apiKeyId, APIKeyRequest request) {
       return client.UpdateAPIKeyAsync(apiKeyId, request).GetAwaiter().GetResult();
     }
@@ -1414,6 +1404,11 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<GroupResponse> UpdateGroup(Guid? groupId, GroupRequest request) {
       return client.UpdateGroupAsync(groupId, request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
+    public ClientResponse<IPAccessControlListResponse> UpdateIPAccessControlList(Guid? accessControlListId, IPAccessControlListRequest request) {
+      return client.UpdateIPAccessControlListAsync(accessControlListId, request).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
