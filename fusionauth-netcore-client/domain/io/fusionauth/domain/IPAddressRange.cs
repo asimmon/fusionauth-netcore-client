@@ -23,13 +23,13 @@ namespace io.fusionauth.domain {
   /**
    * @author Brett Guy
    */
-  public class IPRange {
+  public class IPAddressRange {
 
     public string endIPAddress;
 
     public string startIPAddress;
 
-    public IPRange with(Action<IPRange> action) {
+    public IPAddressRange with(Action<IPAddressRange> action) {
       action(this);
       return this;
     }

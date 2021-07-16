@@ -29,7 +29,7 @@ namespace io.fusionauth.domain {
 
     public IPAccessControlListMode defaultAction;
 
-    public List<IPRange> exceptions;
+    public List<IPAddressRange> exceptions;
 
     public Guid? id;
 
