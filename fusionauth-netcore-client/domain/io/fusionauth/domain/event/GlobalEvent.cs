@@ -15,30 +15,19 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * A marker interface indicating this event is not scoped to a tenant and will be sent to all webhooks.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class GlobalEvent {
 
-    public DateTimeOffset? createInstant;
-
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public GlobalEvent with(Action<GlobalEvent> action) {
       action(this);
       return this;
     }

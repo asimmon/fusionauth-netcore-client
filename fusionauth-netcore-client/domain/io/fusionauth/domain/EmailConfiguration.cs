@@ -47,6 +47,26 @@ namespace io.fusionauth.domain {
 
     public EmailUnverifiedOptions unverified;
 
+    public Guid? userDuplicateEmailEmailTemplateId;
+
+    public Guid? userEmailChangedEmailTemplateId;
+
+    public Guid? userEmailVerifiedEmailTemplateId;
+
+    public Guid? userLoginNewDeviceEmailTemplateId;
+
+    public Guid? userLoginSuspectEmailTemplateId;
+
+    public Guid? userPasswordResetSuccessEmailTemplateId;
+
+    public Guid? userPasswordUpdateEmailTemplateId;
+
+    public Guid? userRegistrationVerifiedEmailTemplateId;
+
+    public Guid? userTwoFactorMethodAddEmailTemplateId;
+
+    public Guid? userTwoFactorMethodRemoveEmailTemplateId;
+
     public string username;
 
     public Guid? verificationEmailTemplateId;

@@ -69,12 +69,14 @@ namespace io.fusionauth.domain.@event {
         UserLoginSuspect, 
         [EnumMember(Value = "user.password.breach")]
         UserPasswordBreach, 
-        [EnumMember(Value = "user.password.reset.request")]
-        UserPasswordResetRequest, 
-        [EnumMember(Value = "user.password.reset.sent")]
-        UserPasswordResetSent, 
+        [EnumMember(Value = "user.password.reset.send")]
+        UserPasswordResetSend, 
+        [EnumMember(Value = "user.password.reset.start")]
+        UserPasswordResetStart, 
         [EnumMember(Value = "user.password.reset.success")]
         UserPasswordResetSuccess, 
+        [EnumMember(Value = "user.password.update")]
+        UserPasswordUpdate, 
         [EnumMember(Value = "user.reactivate")]
         UserReactivate, 
         [EnumMember(Value = "user.registration.create")]

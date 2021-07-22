@@ -22,7 +22,7 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Model a user event when a two-factor method has been added.
+   * Model a user event when a two-factor method has been removed.
    *
    * @author Daniel DeGroff
    */
