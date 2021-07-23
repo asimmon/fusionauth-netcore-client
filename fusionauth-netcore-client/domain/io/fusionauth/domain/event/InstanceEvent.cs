@@ -25,9 +25,9 @@ namespace io.fusionauth.domain.@event {
    *
    * @author Daniel DeGroff
    */
-  public class GlobalEvent {
+  public class InstanceEvent {
 
-    public GlobalEvent with(Action<GlobalEvent> action) {
+    public InstanceEvent with(Action<InstanceEvent> action) {
       action(this);
       return this;
     }

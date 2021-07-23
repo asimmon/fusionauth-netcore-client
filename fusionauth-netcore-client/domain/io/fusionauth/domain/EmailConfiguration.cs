@@ -29,11 +29,25 @@ namespace io.fusionauth.domain {
 
     public string defaultFromName;
 
+    public Guid? duplicateEmailEmailTemplateId;
+
+    public Guid? emailUpdateEmailTemplateId;
+
+    public Guid? emailVerifiedEmailTemplateId;
+
     public Guid? forgotPasswordEmailTemplateId;
 
     public string host;
 
+    public Guid? loginNewDeviceEmailTemplateId;
+
+    public Guid? loginSuspectEmailTemplateId;
+
     public string password;
+
+    public Guid? passwordResetSuccessEmailTemplateId;
+
+    public Guid? passwordUpdateEmailTemplateId;
 
     public Guid? passwordlessEmailTemplateId;
 
@@ -45,27 +59,11 @@ namespace io.fusionauth.domain {
 
     public Guid? setPasswordEmailTemplateId;
 
+    public Guid? twoFactorMethodAddEmailTemplateId;
+
+    public Guid? twoFactorMethodRemoveEmailTemplateId;
+
     public EmailUnverifiedOptions unverified;
-
-    public Guid? userDuplicateEmailEmailTemplateId;
-
-    public Guid? userEmailChangedEmailTemplateId;
-
-    public Guid? userEmailVerifiedEmailTemplateId;
-
-    public Guid? userLoginNewDeviceEmailTemplateId;
-
-    public Guid? userLoginSuspectEmailTemplateId;
-
-    public Guid? userPasswordResetSuccessEmailTemplateId;
-
-    public Guid? userPasswordUpdateEmailTemplateId;
-
-    public Guid? userRegistrationVerifiedEmailTemplateId;
-
-    public Guid? userTwoFactorMethodAddEmailTemplateId;
-
-    public Guid? userTwoFactorMethodRemoveEmailTemplateId;
 
     public string username;
 
