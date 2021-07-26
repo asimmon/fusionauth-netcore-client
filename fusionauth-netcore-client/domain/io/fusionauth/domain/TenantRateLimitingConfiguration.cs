@@ -33,7 +33,15 @@ namespace io.fusionauth.domain {
 
     public RateLimitedRequestConfiguration resendRegistrationVerification;
 
+    public RateLimitedRequestConfiguration sendEmailVerification;
+
+    public RateLimitedRequestConfiguration sendPasswordless;
+
     public RateLimitedRequestConfiguration sendPasswordlessEmail;
+
+    public RateLimitedRequestConfiguration sendRegistrationVerification;
+
+    public RateLimitedRequestConfiguration sendTwoFactor;
 
     public RateLimitedRequestConfiguration sendTwoFactorEmail;
 
