@@ -22,23 +22,17 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Created Event (and can be converted to JSON).
+   * <p>
+   * This is different than the user.create event in that it will be sent after the user has been created. This event cannot be made transactional.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserCreateCompleteEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public User user;
 
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserCreateCompleteEvent with(Action<UserCreateCompleteEvent> action) {
       action(this);
       return this;
     }

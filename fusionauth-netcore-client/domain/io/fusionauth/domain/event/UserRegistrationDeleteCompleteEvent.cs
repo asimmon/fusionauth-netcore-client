@@ -22,23 +22,21 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Deleted Registration Event (and can be converted to JSON).
+   * <p>
+   * This is different than user.registration.delete in that it is sent after the TX has been committed. This event cannot be transactional.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserRegistrationDeleteCompleteEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public Guid? applicationId;
 
-    public Guid? id;
+    public UserRegistration registration;
 
-    public EventInfo info;
+    public User user;
 
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserRegistrationDeleteCompleteEvent with(Action<UserRegistrationDeleteCompleteEvent> action) {
       action(this);
       return this;
     }

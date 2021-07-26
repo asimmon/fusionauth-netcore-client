@@ -15,30 +15,19 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * A marker interface indicating this event cannot be made transactional.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class NonTransactionalEvent {
 
-    public DateTimeOffset? createInstant;
-
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public NonTransactionalEvent with(Action<NonTransactionalEvent> action) {
       action(this);
       return this;
     }

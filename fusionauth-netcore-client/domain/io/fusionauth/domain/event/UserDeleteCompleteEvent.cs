@@ -22,23 +22,18 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Event (and can be converted to JSON) that is used for all user modifications (create, update,
+   * delete).
+   * <p>
+   * This is different than user.delete because it is sent after the tx is committed, this cannot be transactional.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserDeleteCompleteEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public User user;
 
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserDeleteCompleteEvent with(Action<UserDeleteCompleteEvent> action) {
       action(this);
       return this;
     }

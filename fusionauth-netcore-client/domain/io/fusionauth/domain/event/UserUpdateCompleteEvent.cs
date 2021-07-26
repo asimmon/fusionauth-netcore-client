@@ -22,23 +22,17 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Update Event once it is completed. This cannot be transactional.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserUpdateCompleteEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public User original;
 
-    public Guid? id;
+    public User user;
 
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserUpdateCompleteEvent with(Action<UserUpdateCompleteEvent> action) {
       action(this);
       return this;
     }

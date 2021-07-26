@@ -15,30 +15,19 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Login event for a new device (un-recognized)
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserLoginNewDeviceEvent: UserLoginSuccessEvent {
 
-    public DateTimeOffset? createInstant;
-
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserLoginNewDeviceEvent with(Action<UserLoginNewDeviceEvent> action) {
       action(this);
       return this;
     }

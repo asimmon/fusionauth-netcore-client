@@ -15,30 +15,21 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Event event to indicate kickstart has been successfully completed.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class KickstartSuccessEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public Guid? instanceId;
 
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public KickstartSuccessEvent with(Action<KickstartSuccessEvent> action) {
       action(this);
       return this;
     }

@@ -22,23 +22,17 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models an event where a user is attempted to be registered with the same email address of a user that already exist in FusionAuth.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserEmailDuplicateEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public Guid? applicationId;
 
-    public Guid? id;
+    public User user;
 
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserEmailDuplicateEvent with(Action<UserEmailDuplicateEvent> action) {
       action(this);
       return this;
     }

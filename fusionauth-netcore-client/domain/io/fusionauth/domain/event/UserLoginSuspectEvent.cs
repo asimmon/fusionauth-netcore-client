@@ -15,30 +15,19 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Login event that is suspect.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserLoginSuspectEvent: UserLoginSuccessEvent {
 
-    public DateTimeOffset? createInstant;
-
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserLoginSuspectEvent with(Action<UserLoginSuspectEvent> action) {
       action(this);
       return this;
     }

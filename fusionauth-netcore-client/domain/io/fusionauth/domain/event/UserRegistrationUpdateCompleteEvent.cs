@@ -22,23 +22,23 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Update Registration Event (and can be converted to JSON).
+   * <p>
+   * This is different than user.registration.update in that it is sent after this event completes, this cannot be transactional.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserRegistrationUpdateCompleteEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public Guid? applicationId;
 
-    public Guid? id;
+    public UserRegistration original;
 
-    public EventInfo info;
+    public UserRegistration registration;
 
-    public Guid? tenantId;
+    public User user;
 
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserRegistrationUpdateCompleteEvent with(Action<UserRegistrationUpdateCompleteEvent> action) {
       action(this);
       return this;
     }

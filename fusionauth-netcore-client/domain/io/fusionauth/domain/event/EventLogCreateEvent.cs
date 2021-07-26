@@ -22,23 +22,15 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Event event to an event log was created.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class EventLogCreateEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public EventLog @eventLog;
 
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public EventLogCreateEvent with(Action<EventLogCreateEvent> action) {
       action(this);
       return this;
     }

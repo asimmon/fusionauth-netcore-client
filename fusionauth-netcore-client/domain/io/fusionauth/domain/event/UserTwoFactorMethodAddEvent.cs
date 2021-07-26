@@ -22,23 +22,17 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Model a user event when a two-factor method has been removed.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserTwoFactorMethodAddEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public TwoFactorMethod method;
 
-    public Guid? id;
+    public User user;
 
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserTwoFactorMethodAddEvent with(Action<UserTwoFactorMethodAddEvent> action) {
       action(this);
       return this;
     }

@@ -22,23 +22,15 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models the User Password Reset Success Event.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserPasswordResetSuccessEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public User user;
 
-    public Guid? id;
-
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserPasswordResetSuccessEvent with(Action<UserPasswordResetSuccessEvent> action) {
       action(this);
       return this;
     }

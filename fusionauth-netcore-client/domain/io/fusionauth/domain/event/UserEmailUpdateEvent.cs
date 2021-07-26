@@ -22,23 +22,17 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Base-class for all FusionAuth events.
+   * Models an event where a user's email is updated outside of a forgot / change password workflow.
    *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class BaseEvent {
+  public class UserEmailUpdateEvent: BaseEvent {
 
-    public DateTimeOffset? createInstant;
+    public string previousEmail;
 
-    public Guid? id;
+    public User user;
 
-    public EventInfo info;
-
-    public Guid? tenantId;
-
-    public EventType type;
-
-    public BaseEvent with(Action<BaseEvent> action) {
+    public UserEmailUpdateEvent with(Action<UserEmailUpdateEvent> action) {
       action(this);
       return this;
     }
