@@ -25,6 +25,11 @@ namespace io.fusionauth.domain {
    */
   public enum RateLimitedRequestType {
         FailedLogin, 
-        ForgotPassword
+        ForgotPassword, 
+        ResendEmailVerification, 
+        ResendRegistrationVerification, 
+        SendPasswordlessEmail, 
+        SendTwoFactorEmail, 
+        SendTwoFactorSMS
   }
 }

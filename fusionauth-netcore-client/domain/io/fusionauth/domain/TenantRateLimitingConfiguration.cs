@@ -25,7 +25,19 @@ namespace io.fusionauth.domain {
    */
   public class TenantRateLimitingConfiguration {
 
+    public RateLimitedRequestConfiguration failedLogin;
+
     public RateLimitedRequestConfiguration forgotPassword;
+
+    public RateLimitedRequestConfiguration resendEmailVerification;
+
+    public RateLimitedRequestConfiguration resendRegistrationVerification;
+
+    public RateLimitedRequestConfiguration sendPasswordlessEmail;
+
+    public RateLimitedRequestConfiguration sendTwoFactorEmail;
+
+    public RateLimitedRequestConfiguration sendTwoFactorSMS;
 
     public TenantRateLimitingConfiguration with(Action<TenantRateLimitingConfiguration> action) {
       action(this);
