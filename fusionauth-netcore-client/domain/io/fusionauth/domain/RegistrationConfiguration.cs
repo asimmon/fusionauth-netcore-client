@@ -24,6 +24,8 @@ namespace io.fusionauth.domain {
 
     public Requirable birthDate;
 
+    public List<string> blockedDomains;
+
     public bool? confirmPassword;
 
     public Requirable firstName;

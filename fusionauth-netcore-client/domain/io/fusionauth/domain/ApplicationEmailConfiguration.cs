@@ -24,7 +24,15 @@ namespace io.fusionauth.domain {
 
     public Guid? emailVerificationEmailTemplateId;
 
+    public Guid? emailVerifiedEmailTemplateId;
+
     public Guid? forgotPasswordEmailTemplateId;
+
+    public Guid? loginNewDeviceEmailTemplateId;
+
+    public Guid? loginSuspectEmailTemplateId;
+
+    public Guid? passwordResetSuccessEmailTemplateId;
 
     public Guid? passwordlessEmailTemplateId;
 

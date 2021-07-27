@@ -29,23 +29,13 @@ namespace io.fusionauth.domain {
 
     public RateLimitedRequestConfiguration forgotPassword;
 
-    public RateLimitedRequestConfiguration resendEmailVerification;
-
-    public RateLimitedRequestConfiguration resendRegistrationVerification;
-
     public RateLimitedRequestConfiguration sendEmailVerification;
 
     public RateLimitedRequestConfiguration sendPasswordless;
 
-    public RateLimitedRequestConfiguration sendPasswordlessEmail;
-
     public RateLimitedRequestConfiguration sendRegistrationVerification;
 
     public RateLimitedRequestConfiguration sendTwoFactor;
-
-    public RateLimitedRequestConfiguration sendTwoFactorEmail;
-
-    public RateLimitedRequestConfiguration sendTwoFactorSMS;
 
     public TenantRateLimitingConfiguration with(Action<TenantRateLimitingConfiguration> action) {
       action(this);
