@@ -34,6 +34,8 @@ namespace io.fusionauth.domain.@event {
 
     public string duplicateUsername;
 
+    public User existing;
+
     public User user;
 
     public UserCreateDuplicateEvent with(Action<UserCreateDuplicateEvent> action) {
