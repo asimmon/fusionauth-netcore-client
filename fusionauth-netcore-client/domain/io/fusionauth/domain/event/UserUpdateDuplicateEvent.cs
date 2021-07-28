@@ -15,24 +15,19 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Models an event where a user is attempted to be registered with the same email address of a user that already exist in FusionAuth.
+   * Models an event where a user is being updated and tries to use an "in-use" login Id (email or username).
    *
    * @author Daniel DeGroff
    */
-  public class UserEmailDuplicateEvent: BaseEvent {
+  public class UserUpdateDuplicateEvent: UserCreateDuplicateEvent {
 
-    public Guid? applicationId;
-
-    public User user;
-
-    public UserEmailDuplicateEvent with(Action<UserEmailDuplicateEvent> action) {
+    public UserUpdateDuplicateEvent with(Action<UserUpdateDuplicateEvent> action) {
       action(this);
       return this;
     }

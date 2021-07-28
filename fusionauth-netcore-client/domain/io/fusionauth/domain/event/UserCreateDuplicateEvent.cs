@@ -15,19 +15,28 @@
  */
 
 
+using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
 namespace io.fusionauth.domain.@event {
 
   /**
-   * A marker interface indicating this event is not scoped to a tenant and will be sent to all webhooks.
+   * Models an event where a user is being created with an "in-use" login Id (email or username).
    *
    * @author Daniel DeGroff
    */
-  public class InstanceEvent: NonTransactionalEvent {
+  public class UserCreateDuplicateEvent: BaseEvent {
 
-    public InstanceEvent with(Action<InstanceEvent> action) {
+    public Guid? applicationId;
+
+    public string duplicateEmail;
+
+    public string duplicateUsername;
+
+    public User user;
+
+    public UserCreateDuplicateEvent with(Action<UserCreateDuplicateEvent> action) {
       action(this);
       return this;
     }

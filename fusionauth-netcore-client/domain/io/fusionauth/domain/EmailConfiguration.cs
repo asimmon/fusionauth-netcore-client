@@ -29,8 +29,6 @@ namespace io.fusionauth.domain {
 
     public string defaultFromName;
 
-    public Guid? duplicateEmailEmailTemplateId;
-
     public Guid? emailUpdateEmailTemplateId;
 
     public Guid? emailVerifiedEmailTemplateId;
@@ -64,6 +62,10 @@ namespace io.fusionauth.domain {
     public Guid? twoFactorMethodRemoveEmailTemplateId;
 
     public EmailUnverifiedOptions unverified;
+
+    public Guid? userCreateDuplicateEmailTemplateId;
+
+    public Guid? userUpdateDuplicateEmailTemplateId;
 
     public string username;
 
