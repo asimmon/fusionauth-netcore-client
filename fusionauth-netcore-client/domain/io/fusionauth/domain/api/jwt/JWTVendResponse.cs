@@ -18,32 +18,16 @@
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain {
+namespace io.fusionauth.domain.api.jwt {
 
   /**
-   * Information about a user event (login, register, etc) that helps identify the source of the event (location, device type, OS, etc).
-   *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class EventInfo {
+  public class JWTVendResponse {
 
-    public IDictionary<string, object> data;
+    public string token;
 
-    public string deviceDescription;
-
-    public string deviceName;
-
-    public string deviceType;
-
-    public string ipAddress;
-
-    public Location location;
-
-    public string os;
-
-    public string userAgent;
-
-    public EventInfo with(Action<EventInfo> action) {
+    public JWTVendResponse with(Action<JWTVendResponse> action) {
       action(this);
       return this;
     }
