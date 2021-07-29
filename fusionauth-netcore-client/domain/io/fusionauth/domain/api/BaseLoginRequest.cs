@@ -15,7 +15,6 @@
  */
 
 
-using io.fusionauth.domain;
 using io.fusionauth.domain.jwt;
 using System.Collections.Generic;
 using System;
@@ -25,13 +24,11 @@ namespace io.fusionauth.domain.api {
   /**
    * @author Daniel DeGroff
    */
-  public class BaseLoginRequest {
+  public class BaseLoginRequest: BaseEventRequest {
 
     public Guid? applicationId;
 
     public string deviceTrustId;
-
-    public EventInfo @eventInfo;
 
     public string ipAddress;
 

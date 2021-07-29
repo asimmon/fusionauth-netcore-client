@@ -28,6 +28,8 @@ namespace io.fusionauth.domain.api.user {
    */
   public class RegistrationRequest {
 
+    public bool? disableDomainBlock;
+
     public bool? generateAuthenticationToken;
 
     public UserRegistration registration;

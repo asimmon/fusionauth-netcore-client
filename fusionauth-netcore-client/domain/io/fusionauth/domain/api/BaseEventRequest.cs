@@ -22,21 +22,16 @@ using System;
 namespace io.fusionauth.domain.api {
 
   /**
-   * User API request object.
+   * Base class for requests that can contain event information. This event information is used when sending Webhooks or emails
+   * during the transaction. The caller is responsible for ensuring that the event information is correct.
    *
    * @author Brian Pontarelli
    */
-  public class UserRequest {
+  public class BaseEventRequest {
 
-    public bool? disableDomainBlock;
+    public EventInfo @eventInfo;
 
-    public bool? sendSetPasswordEmail;
-
-    public bool? skipVerification;
-
-    public User user;
-
-    public UserRequest with(Action<UserRequest> action) {
+    public BaseEventRequest with(Action<BaseEventRequest> action) {
       action(this);
       return this;
     }

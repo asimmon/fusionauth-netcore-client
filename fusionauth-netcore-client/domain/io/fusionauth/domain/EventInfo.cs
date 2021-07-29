@@ -27,6 +27,8 @@ namespace io.fusionauth.domain {
    */
   public class EventInfo {
 
+    public IDictionary<string, object> data;
+
     public string deviceDescription;
 
     public string deviceName;
