@@ -25,9 +25,9 @@ namespace io.fusionauth.domain.@event {
    *
    * @author Daniel DeGroff
    */
-  public class UserUpdateDuplicateEvent: UserCreateDuplicateEvent {
+  public class UserLoginIdDuplicateOnUpdateEvent: UserLoginIdDuplicateOnCreateEvent {
 
-    public UserUpdateDuplicateEvent with(Action<UserUpdateDuplicateEvent> action) {
+    public UserLoginIdDuplicateOnUpdateEvent with(Action<UserLoginIdDuplicateOnUpdateEvent> action) {
       action(this);
       return this;
     }

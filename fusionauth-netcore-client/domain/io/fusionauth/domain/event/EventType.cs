@@ -53,10 +53,10 @@ namespace io.fusionauth.domain.@event {
         UserDelete, 
         [EnumMember(Value = "user.delete.complete")]
         UserDeleteComplete, 
-        [EnumMember(Value = "user.create.duplicate")]
-        UserCreateDuplicate, 
-        [EnumMember(Value = "user.update.duplicate")]
-        UserUpdateDuplicate, 
+        [EnumMember(Value = "user.loginId.duplicate.create")]
+        UserLoginIdDuplicateOnCreate, 
+        [EnumMember(Value = "user.loginId.duplicate.update")]
+        UserLoginIdDuplicateOnUpdate, 
         [EnumMember(Value = "user.email.update")]
         UserEmailUpdate, 
         [EnumMember(Value = "user.email.verified")]

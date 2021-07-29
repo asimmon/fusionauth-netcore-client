@@ -20,29 +20,14 @@ using System;
 
 namespace io.fusionauth.domain {
 
-  public class RegistrationConfiguration: Enableable {
+  /**
+   * @author Daniel DeGroff
+   */
+  public class TenantRegistrationConfiguration {
 
-    public Requirable birthDate;
+    public List<string> blockedDomains;
 
-    public bool? confirmPassword;
-
-    public Requirable firstName;
-
-    public Guid? formId;
-
-    public Requirable fullName;
-
-    public Requirable lastName;
-
-    public LoginIdType loginIdType;
-
-    public Requirable middleName;
-
-    public Requirable mobilePhone;
-
-    public RegistrationType type;
-
-    public RegistrationConfiguration with(Action<RegistrationConfiguration> action) {
+    public TenantRegistrationConfiguration with(Action<TenantRegistrationConfiguration> action) {
       action(this);
       return this;
     }

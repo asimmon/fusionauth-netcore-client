@@ -37,6 +37,10 @@ namespace io.fusionauth.domain {
 
     public string host;
 
+    public Guid? loginIdInUseOnCreateEmailTemplateId;
+
+    public Guid? loginIdInUseOnUpdateEmailTemplateId;
+
     public Guid? loginNewDeviceEmailTemplateId;
 
     public Guid? loginSuspectEmailTemplateId;
@@ -62,10 +66,6 @@ namespace io.fusionauth.domain {
     public Guid? twoFactorMethodRemoveEmailTemplateId;
 
     public EmailUnverifiedOptions unverified;
-
-    public Guid? userCreateDuplicateEmailTemplateId;
-
-    public Guid? userUpdateDuplicateEmailTemplateId;
 
     public string username;
 
