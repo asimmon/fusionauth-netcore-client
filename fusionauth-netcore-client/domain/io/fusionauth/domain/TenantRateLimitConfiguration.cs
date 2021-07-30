@@ -23,7 +23,7 @@ namespace io.fusionauth.domain {
   /**
    * @author Daniel DeGroff
    */
-  public class TenantRateLimitingConfiguration {
+  public class TenantRateLimitConfiguration {
 
     public RateLimitedRequestConfiguration failedLogin;
 
@@ -37,7 +37,7 @@ namespace io.fusionauth.domain {
 
     public RateLimitedRequestConfiguration sendTwoFactor;
 
-    public TenantRateLimitingConfiguration with(Action<TenantRateLimitingConfiguration> action) {
+    public TenantRateLimitConfiguration with(Action<TenantRateLimitConfiguration> action) {
       action(this);
       return this;
     }

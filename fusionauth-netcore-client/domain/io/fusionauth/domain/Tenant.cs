@@ -76,7 +76,7 @@ namespace io.fusionauth.domain {
 
     public PasswordValidationRules passwordValidationRules;
 
-    public TenantRateLimitingConfiguration rateLimitingConfiguration;
+    public TenantRateLimitConfiguration rateLimitConfiguration;
 
     public TenantRegistrationConfiguration registrationConfiguration;
 
