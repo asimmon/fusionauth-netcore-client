@@ -992,6 +992,20 @@ namespace io.fusionauth {
     Task<ClientResponse<IdentityProviderLinkResponse>> DeleteUserLinkAsync(Guid? identityProviderId, string identityProviderUserId, Guid? userId);
 
     /// <summary>
+    /// Deletes the user based on the given request (sent to the API as JSON). This permanently deletes all information, metrics, reports and data associated
+    /// with the user.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="request"> The request object that contains all of the information used to delete the user.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<RESTVoid>> DeleteUserWithRequestAsync(UserDeleteRequest request);
+
+    /// <summary>
     /// Deletes the users with the given ids, or users matching the provided JSON query or queryString.
     /// The order of preference is ids, query and then queryString, it is recommended to only provide one of the three for the request.
     /// 
@@ -5024,6 +5038,19 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<IdentityProviderLinkResponse> DeleteUserLink(Guid? identityProviderId, string identityProviderUserId, Guid? userId);
+
+   /// <summary>
+   /// Deletes the user based on the given request (sent to the API as JSON). This permanently deletes all information, metrics, reports and data associated
+   /// with the user.
+   /// </summary>
+   /// <param name="request"> The request object that contains all of the information used to delete the user.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<RESTVoid> DeleteUserWithRequest(UserDeleteRequest request);
 
    /// <summary>
    /// Deletes the users with the given ids, or users matching the provided JSON query or queryString.

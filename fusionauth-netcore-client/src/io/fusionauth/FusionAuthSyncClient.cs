@@ -402,6 +402,11 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public ClientResponse<RESTVoid> DeleteUserWithRequest(UserDeleteRequest request) {
+      return client.DeleteUserWithRequestAsync(request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
     [Obsolete("This method has been renamed to DeleteUsersByQuery, use that method instead.")]
     public ClientResponse<UserDeleteResponse> DeleteUsers(UserDeleteRequest request) {
       return client.DeleteUsersAsync(request).GetAwaiter().GetResult();

@@ -753,6 +753,15 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public Task<ClientResponse<RESTVoid>> DeleteUserWithRequestAsync(UserDeleteRequest request) {
+      return buildClient()
+          .withUri("/api/user")
+          .withJSONBody(request)
+          .withMethod("Delete")
+          .goAsync<RESTVoid>();
+    }
+
+    /// <inheritdoc/>
     [Obsolete("This method has been renamed to DeleteUsersByQueryAsync, use that method instead.")]
     public Task<ClientResponse<UserDeleteResponse>> DeleteUsersAsync(UserDeleteRequest request) {
       return buildClient()
