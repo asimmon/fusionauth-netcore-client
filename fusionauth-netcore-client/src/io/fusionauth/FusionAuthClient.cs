@@ -2841,6 +2841,15 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public Task<ClientResponse<JWTVendResponse>> VendJWTAsync(JWTVendRequest request) {
+      return buildClient()
+          .withUri("/api/jwt/vend")
+          .withJSONBody(request)
+          .withMethod("Post")
+          .goAsync<JWTVendResponse>();
+    }
+
+    /// <inheritdoc/>
     [Obsolete("This method has been renamed to VerifyEmailAddressAsync and changed to take a JSON request body, use that method instead.")]
     public Task<ClientResponse<RESTVoid>> VerifyEmailAsync(string verificationId) {
       return buildAnonymousClient()

@@ -1502,6 +1502,11 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public ClientResponse<JWTVendResponse> VendJWT(JWTVendRequest request) {
+      return client.VendJWTAsync(request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
     [Obsolete("This method has been renamed to VerifyEmailAddress and changed to take a JSON request body, use that method instead.")]
     public ClientResponse<RESTVoid> VerifyEmail(string verificationId) {
       return client.VerifyEmailAsync(verificationId).GetAwaiter().GetResult();
