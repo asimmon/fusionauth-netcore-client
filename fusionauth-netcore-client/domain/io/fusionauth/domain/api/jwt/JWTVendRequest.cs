@@ -27,6 +27,8 @@ namespace io.fusionauth.domain.api.jwt {
 
     public IDictionary<string, object> claims;
 
+    public Guid? keyId;
+
     public int? timeToLiveInSeconds;
 
     public JWTVendRequest with(Action<JWTVendRequest> action) {
