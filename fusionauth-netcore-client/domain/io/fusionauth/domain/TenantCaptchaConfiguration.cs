@@ -20,7 +20,10 @@ using System;
 
 namespace io.fusionauth.domain {
 
-  public class CaptchaConfiguration: Enableable {
+  /**
+   * @author Brett Pontarelli
+   */
+  public class TenantCaptchaConfiguration: Enableable {
 
     public CaptchaMethod captchaMethod;
 
@@ -30,7 +33,7 @@ namespace io.fusionauth.domain {
 
     public double? threshold;
 
-    public CaptchaConfiguration with(Action<CaptchaConfiguration> action) {
+    public TenantCaptchaConfiguration with(Action<TenantCaptchaConfiguration> action) {
       action(this);
       return this;
     }

@@ -20,6 +20,9 @@ using System;
 
 namespace io.fusionauth.domain {
 
+  /**
+   * @author Brett Pontarelli
+   */
   public enum CaptchaMethod {
         GoogleRecaptchaV2, 
         GoogleRecaptchaV3, 

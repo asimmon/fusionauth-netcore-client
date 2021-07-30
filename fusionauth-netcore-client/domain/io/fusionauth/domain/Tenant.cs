@@ -26,6 +26,8 @@ namespace io.fusionauth.domain {
    */
   public class Tenant {
 
+    public TenantCaptchaConfiguration captchaConfiguration;
+
     public bool? configured;
 
     public List<ConnectorPolicy> connectorPolicies;
@@ -81,8 +83,6 @@ namespace io.fusionauth.domain {
     public ObjectState state;
 
     public Guid? themeId;
-
-    public ThreatDetectionConfiguration threatDetectionConfiguration;
 
     public TenantUserDeletePolicy userDeletePolicy;
 
