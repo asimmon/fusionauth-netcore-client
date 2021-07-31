@@ -402,7 +402,7 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<RESTVoid> DeleteUserWithRequest(UserDeleteRequest request) {
+    public ClientResponse<RESTVoid> DeleteUserWithRequest(UserDeleteSingleRequest request) {
       return client.DeleteUserWithRequestAsync(request).GetAwaiter().GetResult();
     }
 

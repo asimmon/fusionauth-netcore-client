@@ -1003,7 +1003,7 @@ namespace io.fusionauth {
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.
     /// </returns>
-    Task<ClientResponse<RESTVoid>> DeleteUserWithRequestAsync(UserDeleteRequest request);
+    Task<ClientResponse<RESTVoid>> DeleteUserWithRequestAsync(UserDeleteSingleRequest request);
 
     /// <summary>
     /// Deletes the users with the given ids, or users matching the provided JSON query or queryString.
@@ -5050,7 +5050,7 @@ namespace io.fusionauth {
    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
    /// IOException.
    /// </returns>
-   ClientResponse<RESTVoid> DeleteUserWithRequest(UserDeleteRequest request);
+   ClientResponse<RESTVoid> DeleteUserWithRequest(UserDeleteSingleRequest request);
 
    /// <summary>
    /// Deletes the users with the given ids, or users matching the provided JSON query or queryString.

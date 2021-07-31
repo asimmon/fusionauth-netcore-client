@@ -753,7 +753,7 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<RESTVoid>> DeleteUserWithRequestAsync(UserDeleteRequest request) {
+    public Task<ClientResponse<RESTVoid>> DeleteUserWithRequestAsync(UserDeleteSingleRequest request) {
       return buildClient()
           .withUri("/api/user")
           .withJSONBody(request)
