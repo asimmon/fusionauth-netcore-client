@@ -2279,10 +2279,12 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public Task<ClientResponse<RESTVoid>> RevokeRefreshTokenWithRequestAsync(RefreshTokenRevokeRequest request) {
+    public Task<ClientResponse<RESTVoid>> RevokeRefreshTokenAsync(string token, Guid? userId, Guid? applicationId) {
       return buildClient()
           .withUri("/api/jwt/refresh")
-          .withJSONBody(request)
+          .withParameter("token", token)
+          .withParameter("userId", userId)
+          .withParameter("applicationId", applicationId)
           .withMethod("Delete")
           .goAsync<RESTVoid>();
     }
@@ -2301,17 +2303,6 @@ namespace io.fusionauth {
       return buildClient()
           .withUri("/api/jwt/refresh")
           .withParameter("token", token)
-          .withMethod("Delete")
-          .goAsync<RESTVoid>();
-    }
-
-    /// <inheritdoc/>
-    public Task<ClientResponse<RESTVoid>> RevokeRefreshTokenAsync(string token, Guid? userId, Guid? applicationId) {
-      return buildClient()
-          .withUri("/api/jwt/refresh")
-          .withParameter("token", token)
-          .withParameter("userId", userId)
-          .withParameter("applicationId", applicationId)
           .withMethod("Delete")
           .goAsync<RESTVoid>();
     }
@@ -2340,6 +2331,15 @@ namespace io.fusionauth {
           .withUri("/api/jwt/refresh")
           .withParameter("userId", userId)
           .withParameter("applicationId", applicationId)
+          .withMethod("Delete")
+          .goAsync<RESTVoid>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<RESTVoid>> RevokeRefreshTokensWithRequestAsync(RefreshTokenRevokeRequest request) {
+      return buildClient()
+          .withUri("/api/jwt/refresh")
+          .withJSONBody(request)
           .withMethod("Delete")
           .goAsync<RESTVoid>();
     }

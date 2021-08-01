@@ -1208,8 +1208,8 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<RESTVoid> RevokeRefreshTokenWithRequest(RefreshTokenRevokeRequest request) {
-      return client.RevokeRefreshTokenWithRequestAsync(request).GetAwaiter().GetResult();
+    public ClientResponse<RESTVoid> RevokeRefreshToken(string token, Guid? userId, Guid? applicationId) {
+      return client.RevokeRefreshTokenAsync(token, userId, applicationId).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -1220,11 +1220,6 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<RESTVoid> RevokeRefreshTokenByToken(string token) {
       return client.RevokeRefreshTokenByTokenAsync(token).GetAwaiter().GetResult();
-    }
-
-    /// <inheritdoc/>
-    public ClientResponse<RESTVoid> RevokeRefreshToken(string token, Guid? userId, Guid? applicationId) {
-      return client.RevokeRefreshTokenAsync(token, userId, applicationId).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -1240,6 +1235,11 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<RESTVoid> RevokeRefreshTokensByUserIdForApplication(Guid? userId, Guid? applicationId) {
       return client.RevokeRefreshTokensByUserIdForApplicationAsync(userId, applicationId).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
+    public ClientResponse<RESTVoid> RevokeRefreshTokensWithRequest(RefreshTokenRevokeRequest request) {
+      return client.RevokeRefreshTokensWithRequestAsync(request).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
