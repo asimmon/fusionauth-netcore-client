@@ -18,28 +18,18 @@
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain {
+namespace io.fusionauth.domain.api {
 
   /**
-   * Models action reasons.
+   * Request for the Tenant API to delete a tenant rather than using the URL parameters.
    *
    * @author Brian Pontarelli
    */
-  public class UserActionReason {
+  public class TenantDeleteRequest: BaseEventRequest {
 
-    public string code;
+    public bool? async;
 
-    public Guid? id;
-
-    public DateTimeOffset? insertInstant;
-
-    public DateTimeOffset? lastUpdateInstant;
-
-    public LocalizedStrings localizedTexts;
-
-    public string text;
-
-    public UserActionReason with(Action<UserActionReason> action) {
+    public TenantDeleteRequest with(Action<TenantDeleteRequest> action) {
       action(this);
       return this;
     }

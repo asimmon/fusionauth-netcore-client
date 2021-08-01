@@ -29,8 +29,6 @@ namespace io.fusionauth.domain.api {
 
     public bool? hardDelete;
 
-    public Guid? userId;
-
     public UserDeleteSingleRequest with(Action<UserDeleteSingleRequest> action) {
       action(this);
       return this;

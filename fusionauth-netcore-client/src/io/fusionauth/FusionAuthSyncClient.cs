@@ -377,6 +377,11 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public ClientResponse<RESTVoid> DeleteTenantWithRequest(Guid? tenantId, TenantDeleteRequest request) {
+      return client.DeleteTenantWithRequestAsync(tenantId, request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
     public ClientResponse<RESTVoid> DeleteTheme(Guid? themeId) {
       return client.DeleteThemeAsync(themeId).GetAwaiter().GetResult();
     }
@@ -402,8 +407,8 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<RESTVoid> DeleteUserWithRequest(UserDeleteSingleRequest request) {
-      return client.DeleteUserWithRequestAsync(request).GetAwaiter().GetResult();
+    public ClientResponse<RESTVoid> DeleteUserWithRequest(Guid? userId, UserDeleteSingleRequest request) {
+      return client.DeleteUserWithRequestAsync(userId, request).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -538,8 +543,8 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<RESTVoid> Logout(LogoutRequest request) {
-      return client.LogoutAsync(request).GetAwaiter().GetResult();
+    public ClientResponse<RESTVoid> LogoutWithRequest(LogoutRequest request) {
+      return client.LogoutWithRequestAsync(request).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -1203,8 +1208,8 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
-    public ClientResponse<RESTVoid> RevokeRefreshToken(string token, Guid? userId, Guid? applicationId) {
-      return client.RevokeRefreshTokenAsync(token, userId, applicationId).GetAwaiter().GetResult();
+    public ClientResponse<RESTVoid> RevokeRefreshTokenWithRequest(RefreshTokenRevokeRequest request) {
+      return client.RevokeRefreshTokenWithRequestAsync(request).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>
@@ -1215,6 +1220,11 @@ namespace io.fusionauth {
     /// <inheritdoc/>
     public ClientResponse<RESTVoid> RevokeRefreshTokenByToken(string token) {
       return client.RevokeRefreshTokenByTokenAsync(token).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
+    public ClientResponse<RESTVoid> RevokeRefreshToken(string token, Guid? userId, Guid? applicationId) {
+      return client.RevokeRefreshTokenAsync(token, userId, applicationId).GetAwaiter().GetResult();
     }
 
     /// <inheritdoc/>

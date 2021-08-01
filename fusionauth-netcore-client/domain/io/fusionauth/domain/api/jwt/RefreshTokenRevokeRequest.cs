@@ -15,23 +15,26 @@
  */
 
 
+using io.fusionauth.domain.api;
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.api {
+namespace io.fusionauth.domain.api.jwt {
 
   /**
-   * User Action Reason API response object.
+   * Request for the Refresh Token API to revoke a refresh token rather than using the URL parameters.
    *
    * @author Brian Pontarelli
    */
-  public class UserActionReasonResponse {
+  public class RefreshTokenRevokeRequest: BaseEventRequest {
 
-    public UserActionReason userActionReason;
+    public Guid? applicationId;
 
-    public List<UserActionReason> userActionReasons;
+    public string token;
 
-    public UserActionReasonResponse with(Action<UserActionReasonResponse> action) {
+    public Guid? userId;
+
+    public RefreshTokenRevokeRequest with(Action<RefreshTokenRevokeRequest> action) {
       action(this);
       return this;
     }
