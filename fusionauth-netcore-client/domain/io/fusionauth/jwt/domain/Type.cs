@@ -18,18 +18,12 @@
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.util {
+namespace io.fusionauth.jwt.domain {
 
   /**
-   * Helper for dealing with default values.
-   *
-   * @author Brian Pontarelli
+   * @author Daniel DeGroff
    */
-  public class DefaultTools {
-
-    public DefaultTools with(Action<DefaultTools> action) {
-      action(this);
-      return this;
-    }
+  public enum Type {
+        JWT
   }
 }

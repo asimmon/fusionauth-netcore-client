@@ -23,15 +23,8 @@ namespace io.fusionauth.domain {
   /**
    * @author Brett Guy
    */
-  public class IPAddressRange {
-
-    public string endIPAddress;
-
-    public string startIPAddress;
-
-    public IPAddressRange with(Action<IPAddressRange> action) {
-      action(this);
-      return this;
-    }
+  public enum IPAccessControlEntryAction {
+        Allow, 
+        Block
   }
 }

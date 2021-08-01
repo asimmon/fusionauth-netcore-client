@@ -23,8 +23,17 @@ namespace io.fusionauth.domain {
   /**
    * @author Brett Guy
    */
-  public enum IPAccessControlListMode {
-        Allow, 
-        Block
+  public class IPAccessControlEntry {
+
+    public IPAccessControlEntryAction action;
+
+    public string endIPAddress;
+
+    public string startIPAddress;
+
+    public IPAccessControlEntry with(Action<IPAccessControlEntry> action) {
+      action(this);
+      return this;
+    }
   }
 }

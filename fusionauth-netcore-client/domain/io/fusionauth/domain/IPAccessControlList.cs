@@ -27,9 +27,7 @@ namespace io.fusionauth.domain {
 
     public IDictionary<string, object> data;
 
-    public IPAccessControlListMode defaultAction;
-
-    public List<IPAddressRange> exceptions;
+    public List<IPAccessControlEntry> entries;
 
     public Guid? id;
 
