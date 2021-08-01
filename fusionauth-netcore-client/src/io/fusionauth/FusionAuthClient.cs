@@ -1045,6 +1045,15 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public Task<ClientResponse<RESTVoid>> LogoutAsync(LogoutRequest request) {
+      return buildAnonymousClient()
+          .withUri("/api/logout")
+          .withJSONBody(request)
+          .withMethod("Post")
+          .goAsync<RESTVoid>();
+    }
+
+    /// <inheritdoc/>
     public Task<ClientResponse<LookupResponse>> LookupIdentityProviderAsync(string domain) {
       return buildClient()
           .withUri("/api/identity-provider/lookup")

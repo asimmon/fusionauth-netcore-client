@@ -1422,6 +1422,20 @@ namespace io.fusionauth {
     Task<ClientResponse<RESTVoid>> LogoutAsync(bool? global, string refreshToken);
 
     /// <summary>
+    /// The Logout API is intended to be used to remove the refresh token and access token cookies if they exist on the
+    /// client and revoke the refresh token stored. This API takes the refresh token in the JSON body.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="request"> The request object that contains all of the information used to logout the user.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<RESTVoid>> LogoutAsync(LogoutRequest request);
+
+    /// <summary>
     /// Retrieves the identity provider for the given domain. A 200 response code indicates the domain is managed
     /// by a registered identity provider. A 404 indicates the domain is not managed.
     /// This is an asynchronous method.
@@ -5441,6 +5455,19 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<RESTVoid> Logout(bool? global, string refreshToken);
+
+   /// <summary>
+   /// The Logout API is intended to be used to remove the refresh token and access token cookies if they exist on the
+   /// client and revoke the refresh token stored. This API takes the refresh token in the JSON body.
+   /// </summary>
+   /// <param name="request"> The request object that contains all of the information used to logout the user.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<RESTVoid> Logout(LogoutRequest request);
 
    /// <summary>
    /// Retrieves the identity provider for the given domain. A 200 response code indicates the domain is managed

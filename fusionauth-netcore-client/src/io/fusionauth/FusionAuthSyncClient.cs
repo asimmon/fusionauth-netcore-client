@@ -538,6 +538,11 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public ClientResponse<RESTVoid> Logout(LogoutRequest request) {
+      return client.LogoutAsync(request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
     public ClientResponse<LookupResponse> LookupIdentityProvider(string domain) {
       return client.LookupIdentityProviderAsync(domain).GetAwaiter().GetResult();
     }
