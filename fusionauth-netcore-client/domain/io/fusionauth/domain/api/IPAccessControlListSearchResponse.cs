@@ -26,7 +26,7 @@ namespace io.fusionauth.domain.api {
    */
   public class IPAccessControlListSearchResponse {
 
-    public List<IPAccessControlList> acls;
+    public List<IPAccessControlList> ipAccessControlLists;
 
     public long? total;
 

@@ -52,6 +52,8 @@ namespace io.fusionauth.domain {
 
     public DateTimeOffset? insertInstant;
 
+    public TenantIPAccessControlListConfiguration ipAccessControlListConfiguration;
+
     public string issuer;
 
     public JWTConfiguration jwtConfiguration;

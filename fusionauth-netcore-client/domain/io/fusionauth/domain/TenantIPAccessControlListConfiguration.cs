@@ -15,24 +15,19 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.api {
+namespace io.fusionauth.domain {
 
   /**
-   * User Action Reason API response object.
-   *
-   * @author Brian Pontarelli
+   * @author Brett Guy
    */
-  public class UserActionReasonResponse {
+  public class TenantIPAccessControlListConfiguration: Enableable {
 
-    public UserActionReason userActionReason;
+    public Guid? ipAccessControlListId;
 
-    public List<UserActionReason> userActionReasons;
-
-    public UserActionReasonResponse with(Action<UserActionReasonResponse> action) {
+    public TenantIPAccessControlListConfiguration with(Action<TenantIPAccessControlListConfiguration> action) {
       action(this);
       return this;
     }

@@ -15,24 +15,31 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
-namespace io.fusionauth.domain.api {
+namespace io.fusionauth.domain {
 
   /**
-   * User Action Reason API response object.
+   * Models action reasons.
    *
    * @author Brian Pontarelli
    */
-  public class UserActionReasonResponse {
+  public class UserActionReason {
 
-    public UserActionReason userActionReason;
+    public string code;
 
-    public List<UserActionReason> userActionReasons;
+    public Guid? id;
 
-    public UserActionReasonResponse with(Action<UserActionReasonResponse> action) {
+    public DateTimeOffset? insertInstant;
+
+    public DateTimeOffset? lastUpdateInstant;
+
+    public LocalizedStrings localizedTexts;
+
+    public string text;
+
+    public UserActionReason with(Action<UserActionReason> action) {
       action(this);
       return this;
     }
