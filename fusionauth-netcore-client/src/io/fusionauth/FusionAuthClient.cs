@@ -815,9 +815,19 @@ namespace io.fusionauth {
     public Task<ClientResponse<RESTVoid>> DisableTwoFactorAsync(Guid? userId, string methodId, string code) {
       return buildClient()
           .withUri("/api/user/two-factor")
-          .withParameter("userId", userId)
+          .withUriSegment(userId)
           .withParameter("methodId", methodId)
           .withParameter("code", code)
+          .withMethod("Delete")
+          .goAsync<RESTVoid>();
+    }
+
+    /// <inheritdoc/>
+    public Task<ClientResponse<RESTVoid>> DisableTwoFactorWithRequestAsync(Guid? userId, TwoFactorDisableRequest request) {
+      return buildClient()
+          .withUri("/api/user/two-factor")
+          .withUriSegment(userId)
+          .withJSONBody(request)
           .withMethod("Delete")
           .goAsync<RESTVoid>();
     }

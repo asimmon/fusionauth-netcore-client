@@ -438,6 +438,11 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public ClientResponse<RESTVoid> DisableTwoFactorWithRequest(Guid? userId, TwoFactorDisableRequest request) {
+      return client.DisableTwoFactorWithRequestAsync(userId, request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
     public ClientResponse<TwoFactorResponse> EnableTwoFactor(Guid? userId, TwoFactorRequest request) {
       return client.EnableTwoFactorAsync(userId, request).GetAwaiter().GetResult();
     }

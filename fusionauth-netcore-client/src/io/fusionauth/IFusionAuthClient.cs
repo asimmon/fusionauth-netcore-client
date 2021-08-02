@@ -1101,6 +1101,20 @@ namespace io.fusionauth {
     Task<ClientResponse<RESTVoid>> DisableTwoFactorAsync(Guid? userId, string methodId, string code);
 
     /// <summary>
+    /// Disable Two Factor authentication for a user using a JSON body rather than URL parameters.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="userId"> The Id of the User for which you're disabling Two Factor authentication.</param>
+    /// <param name="request"> The request information that contains the code and methodId along with any event information.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<RESTVoid>> DisableTwoFactorWithRequestAsync(Guid? userId, TwoFactorDisableRequest request);
+
+    /// <summary>
     /// Enable Two Factor authentication for a user.
     /// This is an asynchronous method.
     /// </summary>
@@ -5200,6 +5214,19 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<RESTVoid> DisableTwoFactor(Guid? userId, string methodId, string code);
+
+   /// <summary>
+   /// Disable Two Factor authentication for a user using a JSON body rather than URL parameters.
+   /// </summary>
+   /// <param name="userId"> The Id of the User for which you're disabling Two Factor authentication.</param>
+   /// <param name="request"> The request information that contains the code and methodId along with any event information.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<RESTVoid> DisableTwoFactorWithRequest(Guid? userId, TwoFactorDisableRequest request);
 
    /// <summary>
    /// Enable Two Factor authentication for a user.
