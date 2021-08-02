@@ -15,7 +15,6 @@
  */
 
 
-using io.fusionauth.domain;
 using System.Collections.Generic;
 using System;
 
@@ -24,15 +23,13 @@ namespace io.fusionauth.domain.api {
   /**
    * @author Brian Pontarelli
    */
-  public class TwoFactorRequest {
+  public class TwoFactorRequest: BaseEventRequest {
 
     public string authenticatorId;
 
     public string code;
 
     public string email;
-
-    public EventInfo @eventInfo;
 
     public string method;
 
