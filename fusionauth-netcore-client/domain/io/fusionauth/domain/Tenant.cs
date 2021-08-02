@@ -26,6 +26,8 @@ namespace io.fusionauth.domain {
    */
   public class Tenant {
 
+    public TenantAccessControlListConfiguration accessControlListConfiguration;
+
     public TenantCaptchaConfiguration captchaConfiguration;
 
     public bool? configured;
@@ -51,8 +53,6 @@ namespace io.fusionauth.domain {
     public Guid? id;
 
     public DateTimeOffset? insertInstant;
-
-    public TenantIPAccessControlListConfiguration ipAccessControlListConfiguration;
 
     public string issuer;
 

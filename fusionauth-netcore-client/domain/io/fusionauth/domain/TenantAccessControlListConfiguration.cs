@@ -23,11 +23,11 @@ namespace io.fusionauth.domain {
   /**
    * @author Brett Guy
    */
-  public class TenantIPAccessControlListConfiguration: Enableable {
+  public class TenantAccessControlListConfiguration {
 
     public Guid? ipAccessControlListId;
 
-    public TenantIPAccessControlListConfiguration with(Action<TenantIPAccessControlListConfiguration> action) {
+    public TenantAccessControlListConfiguration with(Action<TenantAccessControlListConfiguration> action) {
       action(this);
       return this;
     }
