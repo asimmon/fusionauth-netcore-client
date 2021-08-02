@@ -896,6 +896,21 @@ namespace io.fusionauth {
     Task<ClientResponse<RESTVoid>> DeleteRegistrationAsync(Guid? userId, Guid? applicationId);
 
     /// <summary>
+    /// Deletes the user registration for the given user and application along with the given JSON body that contains the event information.
+    /// This is an asynchronous method.
+    /// </summary>
+    /// <param name="userId"> The Id of the user whose registration is being deleted.</param>
+    /// <param name="applicationId"> The Id of the application to remove the registration for.</param>
+    /// <param name="request"> The request body that contains the event information.</param>
+    /// <returns>
+    /// When successful, the response will contain the log of the action. If there was a validation error or any
+    /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+    /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+    /// IOException.
+    /// </returns>
+    Task<ClientResponse<RESTVoid>> DeleteRegistrationWithRequestAsync(Guid? userId, Guid? applicationId, RegistrationDeleteRequest request);
+
+    /// <summary>
     /// Deletes the tenant based on the given Id on the URL. This permanently deletes all information, metrics, reports and data associated
     /// with the tenant and everything under the tenant (applications, users, etc).
     /// This is an asynchronous method.
@@ -4994,6 +5009,20 @@ namespace io.fusionauth {
    /// IOException.
    /// </returns>
    ClientResponse<RESTVoid> DeleteRegistration(Guid? userId, Guid? applicationId);
+
+   /// <summary>
+   /// Deletes the user registration for the given user and application along with the given JSON body that contains the event information.
+   /// </summary>
+   /// <param name="userId"> The Id of the user whose registration is being deleted.</param>
+   /// <param name="applicationId"> The Id of the application to remove the registration for.</param>
+   /// <param name="request"> The request body that contains the event information.</param>
+   /// <returns>
+   /// When successful, the response will contain the log of the action. If there was a validation error or any
+   /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
+   /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
+   /// IOException.
+   /// </returns>
+   ClientResponse<RESTVoid> DeleteRegistrationWithRequest(Guid? userId, Guid? applicationId, RegistrationDeleteRequest request);
 
    /// <summary>
    /// Deletes the tenant based on the given Id on the URL. This permanently deletes all information, metrics, reports and data associated

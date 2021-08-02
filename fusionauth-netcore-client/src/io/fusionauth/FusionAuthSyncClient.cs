@@ -367,6 +367,11 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public ClientResponse<RESTVoid> DeleteRegistrationWithRequest(Guid? userId, Guid? applicationId, RegistrationDeleteRequest request) {
+      return client.DeleteRegistrationWithRequestAsync(userId, applicationId, request).GetAwaiter().GetResult();
+    }
+
+    /// <inheritdoc/>
     public ClientResponse<RESTVoid> DeleteTenant(Guid? tenantId) {
       return client.DeleteTenantAsync(tenantId).GetAwaiter().GetResult();
     }

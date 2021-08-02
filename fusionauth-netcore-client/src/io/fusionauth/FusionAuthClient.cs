@@ -685,6 +685,17 @@ namespace io.fusionauth {
     }
 
     /// <inheritdoc/>
+    public Task<ClientResponse<RESTVoid>> DeleteRegistrationWithRequestAsync(Guid? userId, Guid? applicationId, RegistrationDeleteRequest request) {
+      return buildClient()
+          .withUri("/api/user/registration")
+          .withUriSegment(userId)
+          .withUriSegment(applicationId)
+          .withJSONBody(request)
+          .withMethod("Delete")
+          .goAsync<RESTVoid>();
+    }
+
+    /// <inheritdoc/>
     public Task<ClientResponse<RESTVoid>> DeleteTenantAsync(Guid? tenantId) {
       return buildClient()
           .withUri("/api/tenant")
