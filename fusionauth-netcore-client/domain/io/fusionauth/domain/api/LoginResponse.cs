@@ -28,6 +28,8 @@ namespace io.fusionauth.domain.api {
 
     public List<LoginPreventedResponse> actions;
 
+    public string authenticationType;
+
     public string changePasswordId;
 
     public ChangePasswordReason changePasswordReason;
