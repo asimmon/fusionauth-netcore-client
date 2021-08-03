@@ -28,11 +28,11 @@ namespace io.fusionauth.domain.api {
 
     public Guid? applicationId;
 
-    public string deviceTrustId;
-
     public string ipAddress;
 
     public MetaData metaData;
+
+    public bool? newDevice;
 
     public bool? noJWT;
 
