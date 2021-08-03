@@ -25,7 +25,7 @@ namespace io.fusionauth.domain {
    */
   public class SystemSSOConfiguration {
 
-    public int? ssoDeviceTrustTimeToLiveInSeconds;
+    public int? deviceTrustTimeToLiveInSeconds;
 
     public SystemSSOConfiguration with(Action<SystemSSOConfiguration> action) {
       action(this);
