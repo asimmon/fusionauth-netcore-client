@@ -21,13 +21,13 @@ using System;
 namespace io.fusionauth.domain.@event {
 
   /**
-   * Models the User Login event that is suspect.
+   * Models the User Login event that is suspicious.
    *
    * @author Daniel DeGroff
    */
-  public class UserLoginSuspectEvent: UserLoginSuccessEvent {
+  public class UserLoginSuspiciousEvent: UserLoginSuccessEvent {
 
-    public UserLoginSuspectEvent with(Action<UserLoginSuspectEvent> action) {
+    public UserLoginSuspiciousEvent with(Action<UserLoginSuspiciousEvent> action) {
       action(this);
       return this;
     }

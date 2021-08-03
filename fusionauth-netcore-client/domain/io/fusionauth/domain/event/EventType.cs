@@ -67,8 +67,8 @@ namespace io.fusionauth.domain.@event {
         UserLoginNewDevice, 
         [EnumMember(Value = "user.login.success")]
         UserLoginSuccess, 
-        [EnumMember(Value = "user.login.suspect")]
-        UserLoginSuspect, 
+        [EnumMember(Value = "user.login.suspicious")]
+        UserLoginSuspicious, 
         [EnumMember(Value = "user.password.breach")]
         UserPasswordBreach, 
         [EnumMember(Value = "user.password.reset.send")]

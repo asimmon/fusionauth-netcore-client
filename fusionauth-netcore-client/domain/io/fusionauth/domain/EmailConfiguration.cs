@@ -43,7 +43,7 @@ namespace io.fusionauth.domain {
 
     public Guid? loginNewDeviceEmailTemplateId;
 
-    public Guid? loginSuspectEmailTemplateId;
+    public Guid? loginSuspiciousEmailTemplateId;
 
     public string password;
 
