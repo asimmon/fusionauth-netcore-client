@@ -31,6 +31,8 @@ namespace io.fusionauth.domain {
 
     public string country;
 
+    public string displayString;
+
     public double? latitude;
 
     public double? longitude;
