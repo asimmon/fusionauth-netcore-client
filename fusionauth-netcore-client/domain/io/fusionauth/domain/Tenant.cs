@@ -26,7 +26,7 @@ namespace io.fusionauth.domain {
    */
   public class Tenant {
 
-    public TenantAccessControlListConfiguration accessControlListConfiguration;
+    public TenantAccessControlConfiguration accessControlConfiguration;
 
     public TenantCaptchaConfiguration captchaConfiguration;
 

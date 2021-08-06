@@ -21,9 +21,15 @@ using System;
 namespace io.fusionauth.domain {
 
   /**
-   * @author Brett Pontarelli
+   * @author Daniel DeGroff
    */
-  public enum AuthenticationThreats {
-        ImpossibleTravel
+  public class ApplicationAccessControlConfiguration {
+
+    public Guid? uiIPAccessControlListId;
+
+    public ApplicationAccessControlConfiguration with(Action<ApplicationAccessControlConfiguration> action) {
+      action(this);
+      return this;
+    }
   }
 }
