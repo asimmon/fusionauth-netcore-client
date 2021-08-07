@@ -28,6 +28,8 @@ namespace io.fusionauth.domain.api.user {
    */
   public class ChangePasswordRequest: BaseEventRequest {
 
+    public Guid? applicationId;
+
     public string currentPassword;
 
     public string loginId;
