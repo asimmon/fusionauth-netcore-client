@@ -22,6 +22,8 @@ namespace io.fusionauth.domain {
 
   public class ApplicationEmailConfiguration {
 
+    public Guid? emailUpdateEmailTemplateId;
+
     public Guid? emailVerificationEmailTemplateId;
 
     public Guid? emailVerifiedEmailTemplateId;

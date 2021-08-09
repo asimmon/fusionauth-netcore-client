@@ -28,6 +28,8 @@ namespace io.fusionauth.domain.api {
    */
   public class UserRequest: BaseEventRequest {
 
+    public Guid? applicationId;
+
     public bool? disableDomainBlock;
 
     public bool? sendSetPasswordEmail;
